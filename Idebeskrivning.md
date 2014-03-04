@@ -16,7 +16,7 @@ möjlighet att skriva anteckningar till varje nothäfte. Det händer ibland
 att Svante lånar ut sina noter, därför ska det också finnas en möjlighet 
 att notera vilka noter är utlånade och till vem.
 ### Begränsning
-I det individuellt arbete kommer ett gränssnitt och CRUD-funktionalitet mot tre 
+I det individuellt arbete kommer ett gränssnitt och funktionalitet mot tre 
 av tabellerna i databasen att implementeras. Det gäller tabeller för 
 nothäften (*Booklet*), för musikstycke (*Piece*) och för innehåll i ett 
 nothätfte (*BookletContent*).
@@ -97,11 +97,11 @@ nothätfte (*BookletContent*).
 ## Mockup
 ### Nothäfte, lista
 Nothäftena visas i en lista. Möjlighet att välja en post för att visa/redigera 
-detaljer och möjlighet att öppna ett formulär för att lägga till en ny post.
+detaljer och möjlighet att öppna ett formulär för att lägga till en ny post.  
 <img src="Bilder/Skiss-Lista-pa-nothaften.png" />
 
 ### Nothäfte, detaljvy
 Ett nothäftes detaljer visas/redigeras i en seperat vy. Samma utformning används 
 för att visa ett nothäfte, redigera ett nothäfte och för att lägga till ett nytt 
-nothäfte.
+nothäfte.  
 <img src="Bilder/Skiss-Detaljer-om-nothafte.png" />
