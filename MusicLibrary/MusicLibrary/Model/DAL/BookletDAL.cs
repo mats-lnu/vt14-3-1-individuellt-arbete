@@ -125,13 +125,13 @@ namespace MusicLibrary.Model.DAL
         }
 
         /// <summary>
-        /// Select and return recored page wise from table appSchema.Booklet.
+        /// Select and return records page wise from table appSchema.Booklet.
         /// </summary>
         /// <param name="startRowIndex">Start Row Index of the page.</param>
         /// <param name="maximumRows">Maximum number of Rows on the page.</param>
         /// <param name="totalRowCount">Total number of rows in table appSchema.Booklet.</param>
         /// <returns>A collection of instances of MusicLibrary.Model.BLL.Booklet.</returns>
-        public IEnumerable<Booklet> GetBookletsPageWise(int startRowIndex, int maximumRows, out int totalRowCount)
+        public IEnumerable<Booklet> GetBooklets(int startRowIndex, int maximumRows, out int totalRowCount)
         {
             using (var con = CreateConnection())
             {

@@ -99,12 +99,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_Infrastructure\ValidationExtension.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\BLL\Booklet.cs" />
+    <Compile Include="Model\BLL\Service.cs" />
     <Compile Include="Model\DAL\BookletDAL.cs" />
     <Compile Include="Model\DAL\DALBase.cs" />
     <Compile Include="Pages\BookletPages\BookletsList.aspx.cs">
