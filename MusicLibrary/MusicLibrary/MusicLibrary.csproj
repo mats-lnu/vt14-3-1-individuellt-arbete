@@ -77,16 +77,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\foundation.css" />
+    <Content Include="Content\normalize.css" />
     <Content Include="Content\SiteStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Pages\BookletPages\BookletsList.aspx" />
     <Content Include="Pages\Shared\Site.Master" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\foundation.min.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Scripts\modernizr-2.7.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_GlobalResources\Strings.Designer.cs">
@@ -99,6 +104,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Model\BLL\Booklet.cs" />
+    <Compile Include="Model\DAL\BookletDAL.cs" />
+    <Compile Include="Model\DAL\DALBase.cs" />
     <Compile Include="Pages\BookletPages\BookletsList.aspx.cs">
       <DependentUpon>BookletsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -124,9 +132,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="App_GlobalResources\Strings.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>

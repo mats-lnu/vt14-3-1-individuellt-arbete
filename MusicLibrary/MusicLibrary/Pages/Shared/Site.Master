@@ -15,10 +15,10 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
-
-        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server" />
     </div>
     </form>
+
+    <%: System.Web.Optimization.Scripts.Render("~/Scripts/foundation") %>
 </body>
 </html>

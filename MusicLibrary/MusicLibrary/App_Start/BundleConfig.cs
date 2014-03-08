@@ -10,7 +10,13 @@ namespace MusicLibrary
                 "~/Scripts/modernizr-*"
             ));
 
+            bundles.Add(new ScriptBundle("~/Scripts/foundation").Include(
+                "~/Scripts/foundation.min.js"
+            ));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/normalize.css",
+                "~/Content/foundation.css",
                 "~/Content/SiteStyle.css"
             ));
         }
