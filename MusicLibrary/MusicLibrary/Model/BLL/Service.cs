@@ -18,7 +18,7 @@ namespace MusicLibrary.Model.BLL
         {
             get
             {
-                return _bookletDAL ?? (new BookletDAL());
+                return _bookletDAL ?? (_bookletDAL = new BookletDAL());
             }
         }
 
