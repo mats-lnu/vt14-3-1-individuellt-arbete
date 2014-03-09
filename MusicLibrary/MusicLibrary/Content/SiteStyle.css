@@ -1,2 +1,34 @@
-﻿body {
+﻿html, body {
+    background-image: url('Background/Background-texture.png');
+}
+
+/* Listing booklets */
+.booklet-card {
+    padding: 10px !important;
+    margin: 5px !important;
+    border: 1px solid #8c8979;
+    background-color: #fff;
+}
+
+.booklet-card-info p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.booklet-card-info .custom-label {
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.button-list li {
+    display: inline;
+    float: right;
+    padding: 0;
+    margin: 0 0 0 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.button {
+    padding: 3px;
 }

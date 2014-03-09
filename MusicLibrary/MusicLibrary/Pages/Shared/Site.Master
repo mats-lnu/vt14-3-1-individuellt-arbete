@@ -4,21 +4,41 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolderTitle" runat="server">
-            Svantes musikbibliotek
-        </asp:ContentPlaceHolder>
+    <title>Svantes Musikbibliotek
     </title>
     <%: System.Web.Optimization.Styles.Render("~/Content/css") %>
     <%: System.Web.Optimization.Scripts.Render("~/Scripts/modernizr") %>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server" />
-    </div>
+        <div id="Content" class="row">
+            <header class="small-12 columns">
+                <h1>Svantes Musikbibliotek</h1>
+            </header>
+            <div id="Main">
+                <div class="small-12 medium-3 large-2 columns">
+                    <nav>
+                        <ul>
+                            <li>
+                                <asp:HyperLink ID="HyperLink1" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Gå till Musikstycken" runat="server">Musikstycken</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink2" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Gå till Nothäften" runat="server">Nothäften</asp:HyperLink>
+                            </li>
+                            <li>
+                                <asp:HyperLink ID="HyperLink3" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Lägg till nothäfte" runat="server">Lägg till nothäfte</asp:HyperLink>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="small-12 medium-9 large-10 columns">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server" />
+                </div>
+            </div>
+            <footer>
+            </footer>
+        </div>
     </form>
-
     <%: System.Web.Optimization.Scripts.Render("~/Scripts/foundation") %>
 </body>
 </html>

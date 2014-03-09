@@ -77,7 +77,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Background\Background-texture.png" />
     <Content Include="Content\foundation.css" />
+    <Content Include="Content\Icons\Back-icon-small.png" />
+    <Content Include="Content\Icons\Back-icon-smaller.png" />
+    <Content Include="Content\Icons\Back-icon.png" />
+    <Content Include="Content\Icons\Cancel-icon-small.png" />
+    <Content Include="Content\Icons\Cancel-icon-smaller.png" />
+    <Content Include="Content\Icons\Cancel-icon.png" />
+    <Content Include="Content\Icons\Delete-icon-small.png" />
+    <Content Include="Content\Icons\Delete-icon-smaller.png" />
+    <Content Include="Content\Icons\Delete-icon.png" />
+    <Content Include="Content\Icons\Details-icon-small.png" />
+    <Content Include="Content\Icons\Details-icon-smaller.png" />
+    <Content Include="Content\Icons\Details-icon.png" />
+    <Content Include="Content\Icons\Edit-icon-small.png" />
+    <Content Include="Content\Icons\Edit-icon-smaller.png" />
+    <Content Include="Content\Icons\Edit-icon.png" />
+    <Content Include="Content\Icons\Save-icon-small.png" />
+    <Content Include="Content\Icons\Save-icon-smaller.png" />
+    <Content Include="Content\Icons\Save-icon.png" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\SiteStyle.css" />
     <Content Include="Global.asax" />

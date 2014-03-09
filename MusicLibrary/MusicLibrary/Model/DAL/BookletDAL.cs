@@ -108,7 +108,7 @@ namespace MusicLibrary.Model.DAL
                             {
                                 BookletID = reader.GetInt32(bookletIDIndex),
                                 Name = reader.GetString(nameIndex),
-                                PublisherID = reader.GetInt32(publisherIDIndex),
+                                PublisherID = reader.GetInt16(publisherIDIndex),
                                 YearOfPublication = reader.GetDateTime(yearOfPublicationIndex)
                             });
                         }
