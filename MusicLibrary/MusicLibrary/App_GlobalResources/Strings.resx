@@ -117,4 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DeleteRecordError" xml:space="preserve">
+    <value>An error occurred while deleting the data.</value>
+  </data>
+  <data name="InsertRecordError" xml:space="preserve">
+    <value>An error occurred while inserting the data.</value>
+  </data>
+  <data name="SaveDataError" xml:space="preserve">
+    <value>An error occurred while saving the data.</value>
+  </data>
+  <data name="SelectRecordError" xml:space="preserve">
+    <value>An error occurred while selecting the data.</value>
+  </data>
+  <data name="UpdateRecordError" xml:space="preserve">
+    <value>An error occurred while updating the data.</value>
+  </data>
 </root>

@@ -128,8 +128,10 @@
     <Compile Include="Model\BLL\BookletContent.cs" />
     <Compile Include="Model\BLL\Piece.cs" />
     <Compile Include="Model\BLL\Service.cs" />
+    <Compile Include="Model\DAL\BookletContentDAL.cs" />
     <Compile Include="Model\DAL\BookletDAL.cs" />
     <Compile Include="Model\DAL\DALBase.cs" />
+    <Compile Include="Model\DAL\PieceDAL.cs" />
     <Compile Include="Pages\BookletPages\BookletsList.aspx.cs">
       <DependentUpon>BookletsList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -59,5 +59,50 @@ namespace Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while deleting the data..
+        /// </summary>
+        internal static string DeleteRecordError {
+            get {
+                return ResourceManager.GetString("DeleteRecordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while inserting the data..
+        /// </summary>
+        internal static string InsertRecordError {
+            get {
+                return ResourceManager.GetString("InsertRecordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while saving the data..
+        /// </summary>
+        internal static string SaveDataError {
+            get {
+                return ResourceManager.GetString("SaveDataError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while selecting the data..
+        /// </summary>
+        internal static string SelectRecordError {
+            get {
+                return ResourceManager.GetString("SelectRecordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An error occurred while updating the data..
+        /// </summary>
+        internal static string UpdateRecordError {
+            get {
+                return ResourceManager.GetString("UpdateRecordError", resourceCulture);
+            }
+        }
     }
 }

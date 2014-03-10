@@ -1,5 +1,4 @@
-﻿using Resources;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace MusicLibrary.Model.BLL

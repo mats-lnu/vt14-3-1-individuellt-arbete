@@ -1,4 +1,5 @@
 ﻿using MusicLibrary.Model.BLL;
+using Resources;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Data.SqlClient;
 namespace MusicLibrary.Model.DAL
 {
     /// <summary>
-    /// Select, update and insert records in table appSchema.Booklet.
+    /// Select, update, delete and insert records in table appSchema.Booklet.
     /// </summary>
     public class BookletDAL : DALBase
     {
@@ -30,7 +31,7 @@ namespace MusicLibrary.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occurred while deleting the record.");
+                    throw new ApplicationException(Strings.DeleteRecordError);
                 }
             }
         }
@@ -48,6 +49,7 @@ namespace MusicLibrary.Model.DAL
                 {
                     var cmd = new SqlCommand("appSchema.usp_GetBookletByID", con);
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@BookletID", SqlDbType.Int, 4).Value = bookletID;
 
                     con.Open();
 
@@ -64,7 +66,7 @@ namespace MusicLibrary.Model.DAL
                             {
                                 BookletID = reader.GetInt32(bookletIDIndex),
                                 Name = reader.GetString(nameIndex),
-                                PublisherID = reader.GetInt32(publisherIDIndex),
+                                PublisherID = reader.GetInt16(publisherIDIndex),
                                 YearOfPublication = reader.GetDateTime(yearOfPublicationIndex)
                             };
                         }
@@ -74,7 +76,7 @@ namespace MusicLibrary.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occurred while selecting the data.");
+                    throw new ApplicationException(Strings.SelectRecordError);
                 }
             }
         }
@@ -119,7 +121,7 @@ namespace MusicLibrary.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occurred while selecting the data.");
+                    throw new ApplicationException(Strings.SelectRecordError);
                 }
             }
         }
@@ -159,7 +161,7 @@ namespace MusicLibrary.Model.DAL
                             {
                                 BookletID = reader.GetInt32(bookletIDIndex),
                                 Name = reader.GetString(nameIndex),
-                                PublisherID = reader.GetInt32(publisherIDIndex),
+                                PublisherID = reader.GetInt16(publisherIDIndex),
                                 YearOfPublication = reader.GetDateTime(yearOfPublicationIndex)
                             });
                         }
@@ -171,7 +173,7 @@ namespace MusicLibrary.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occurred while selecting the data.");
+                    throw new ApplicationException(Strings.SelectRecordError);
                 }
             }
         }
@@ -200,7 +202,7 @@ namespace MusicLibrary.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occurred while deleting the record.");
+                    throw new ApplicationException(Strings.InsertRecordError);
                 }
             }
         }
@@ -227,7 +229,7 @@ namespace MusicLibrary.Model.DAL
                 }
                 catch
                 {
-                    throw new ApplicationException("An error occurred while deleting the record.");
+                    throw new ApplicationException(Strings.UpdateRecordError);
                 }
             }
         }
