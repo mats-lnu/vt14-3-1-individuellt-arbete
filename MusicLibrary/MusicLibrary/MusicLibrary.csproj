@@ -125,6 +125,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\BLL\Booklet.cs" />
+    <Compile Include="Model\BLL\BookletContent.cs" />
+    <Compile Include="Model\BLL\Piece.cs" />
     <Compile Include="Model\BLL\Service.cs" />
     <Compile Include="Model\DAL\BookletDAL.cs" />
     <Compile Include="Model\DAL\DALBase.cs" />
