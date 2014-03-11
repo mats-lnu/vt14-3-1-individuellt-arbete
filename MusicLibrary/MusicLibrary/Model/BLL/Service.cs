@@ -3,8 +3,6 @@ using Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace MusicLibrary.Model.BLL
 {
@@ -156,6 +154,16 @@ namespace MusicLibrary.Model.BLL
         public IEnumerable<Piece> GetPieces()
         {
             return PieceDAL.GetPieces();
+        }
+
+        /// <summary>
+        /// Select and return records from table appSchema.Piece with a foreign key in table appSchema.BookletContent.
+        /// </summary>
+        /// <param name="bookletID">Primary key for a Booklet-object.</param>
+        /// <returns>A collection of MusicLibrary.Model.BLL.Piece instances.</returns>
+        public IEnumerable<Piece> GetPieces(int bookletID)
+        {
+            return PieceDAL.GetPiecesByBookletID(bookletID);
         }
 
         /// <summary>

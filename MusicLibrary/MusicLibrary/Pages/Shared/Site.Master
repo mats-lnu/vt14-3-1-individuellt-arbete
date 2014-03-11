@@ -13,7 +13,8 @@
     <form id="form1" runat="server">
         <div id="Content" class="row">
             <header class="small-12 columns">
-                <h1>Svantes Musikbibliotek</h1>
+                <h1 class="pageheader">Svantes Musikbibliotek</h1>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server" />
             </header>
             <div id="Main">
                 <div class="small-12 medium-3 large-2 columns">

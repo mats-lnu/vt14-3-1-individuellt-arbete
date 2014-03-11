@@ -11,6 +11,7 @@ namespace MusicLibrary
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.MapPageRoute("Booklets", "Nothaften", "~/Pages/BookletPages/BookletsList.aspx");
+            routes.MapPageRoute("BookletDetails", "Nothaften/{id}", "~/Pages/BookletPages/BookletDetails.aspx");
         }
     }
 }

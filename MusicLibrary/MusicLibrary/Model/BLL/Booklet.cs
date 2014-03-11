@@ -20,5 +20,9 @@ namespace MusicLibrary.Model.BLL
 
         [Required(ErrorMessage = "YearOfPublication can't be null.")]
         public DateTime YearOfPublication { get; set; }
+
+        [Required(ErrorMessage="Place can't be null.")]
+        [StringLength(6, ErrorMessage="Place can't be longer than 6 characters.")]
+        public string Place { get; set; }
     }
 }

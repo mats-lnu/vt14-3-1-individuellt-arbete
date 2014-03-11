@@ -37,6 +37,59 @@ namespace MusicLibrary.Model.DAL
         }
 
         /// <summary>
+        /// Select and return records from table appSchema.Piece with a foreign key in table appSchema.BookletContent.
+        /// </summary>
+        /// <param name="bookletID">Primary key for a Booklet-object.</param>
+        /// <returns>A collection of MusicLibrary.Model.BLL.Piece instances.</returns>
+        public IEnumerable<Piece> GetPiecesByBookletID(int bookletID)
+        {
+            using (var con = CreateConnection())
+            {
+                try
+                {
+                    var pieces = new List<Piece>(100);
+                    var cmd = new SqlCommand("appSchema.usp_GetPiecesByBookletID", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@BookletID", SqlDbType.Int, 4).Value = bookletID;
+
+                    con.Open();
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        var pieceIDIndex = reader.GetOrdinal("PieceID");
+                        var nameIndex = reader.GetOrdinal("Name");
+                        var catalogueNumberIndex = reader.GetOrdinal("CatalogueNumber");
+                        var composerIDIndex = reader.GetOrdinal("ComposerID");
+                        var scaleID = reader.GetOrdinal("ScaleID");
+                        var genreID = reader.GetOrdinal("GenreID");
+                        var yearOfCompositionIndex = reader.GetOrdinal("YearOfComposition");
+
+                        while (reader.Read())
+                        {
+                            pieces.Add(new Piece
+                            {
+                                PieceID = reader.GetInt32(pieceIDIndex),
+                                Name = reader.GetString(nameIndex),
+                                CatalogueNumber = reader.GetString(catalogueNumberIndex),
+                                ComposerID = reader.GetInt16(composerIDIndex),
+                                ScaleID = reader.GetByte(scaleID),
+                                GenreID = reader.GetByte(genreID),
+                                YearOfComposition = reader.GetDateTime(yearOfCompositionIndex)
+                            });
+                        }
+                    }
+
+                    pieces.TrimExcess();
+                    return pieces;
+                }
+                catch
+                {
+                    throw new ApplicationException(Strings.SelectRecordError);
+                }
+            }
+        }
+
+        /// <summary>
         /// Select and return a record from table appSchema.Piece.
         /// </summary>
         /// <param name="bookletID">Record to be selected.</param>

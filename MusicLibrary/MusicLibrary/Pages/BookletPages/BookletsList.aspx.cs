@@ -23,14 +23,29 @@ namespace MusicLibrary.Pages.BookletPages
         //     string sortByExpression
         public IEnumerable<MusicLibrary.Model.BLL.Booklet> ListViewBooklets_GetData()
         {
-            try
-            {
+            //try
+            //{
                 return new Service().GetBooklets();
-            }
-            catch
+            //}
+            //catch
+            //{
+            //    ModelState.AddModelError(String.Empty, "Ett fel inträffade då nothäftena hämtades.");
+            //    return null;
+            //}
+        }
+
+        protected void ListViewBooklets_ItemDataBound(object sender, ListViewItemEventArgs e)
+        {
+            Literal literal = e.Item.FindControl("yearOfPubliationLabel") as Literal;
+            if (literal != null && literal.Text == "1")
             {
-                ModelState.AddModelError(String.Empty, "Ett fel inträffade då nothäftena hämtades.");
-                return null;
+                literal.Text = "<span class=\"defaultValue\">Okänt publiseringsår</span>";
+            }
+
+            literal = e.Item.FindControl("placeLabel") as Literal;
+            if (literal != null && literal.Text == "ZZ0000")
+            {
+                literal.Text = "<span class=\"defaultValue\">Ingen hyllplats</span>";
             }
         }
     }

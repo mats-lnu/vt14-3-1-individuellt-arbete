@@ -59,6 +59,7 @@ namespace MusicLibrary.Model.DAL
                         var nameIndex = reader.GetOrdinal("Name");
                         var publisherIDIndex = reader.GetOrdinal("PublisherID");
                         var yearOfPublicationIndex = reader.GetOrdinal("YearOfPublication");
+                        var placeIndex = reader.GetOrdinal("Place");
 
                         if (reader.Read())
                         {
@@ -67,7 +68,8 @@ namespace MusicLibrary.Model.DAL
                                 BookletID = reader.GetInt32(bookletIDIndex),
                                 Name = reader.GetString(nameIndex),
                                 PublisherID = reader.GetInt16(publisherIDIndex),
-                                YearOfPublication = reader.GetDateTime(yearOfPublicationIndex)
+                                YearOfPublication = reader.GetDateTime(yearOfPublicationIndex),
+                                Place = reader.GetString(placeIndex)
                             };
                         }
 
@@ -103,6 +105,7 @@ namespace MusicLibrary.Model.DAL
                         var nameIndex = reader.GetOrdinal("Name");
                         var publisherIDIndex = reader.GetOrdinal("PublisherID");
                         var yearOfPublicationIndex = reader.GetOrdinal("YearOfPublication");
+                        var placeIndex = reader.GetOrdinal("Place");
 
                         while (reader.Read())
                         {
@@ -111,7 +114,8 @@ namespace MusicLibrary.Model.DAL
                                 BookletID = reader.GetInt32(bookletIDIndex),
                                 Name = reader.GetString(nameIndex),
                                 PublisherID = reader.GetInt16(publisherIDIndex),
-                                YearOfPublication = reader.GetDateTime(yearOfPublicationIndex)
+                                YearOfPublication = reader.GetDateTime(yearOfPublicationIndex),
+                                Place = reader.GetString(placeIndex)
                             });
                         }
                     }
@@ -154,6 +158,7 @@ namespace MusicLibrary.Model.DAL
                         var nameIndex = reader.GetOrdinal("Name");
                         var publisherIDIndex = reader.GetOrdinal("PublisherID");
                         var yearOfPublicationIndex = reader.GetOrdinal("YearOfPublication");
+                        var placeIndex = reader.GetOrdinal("Place");
 
                         while (reader.Read())
                         {
@@ -162,7 +167,8 @@ namespace MusicLibrary.Model.DAL
                                 BookletID = reader.GetInt32(bookletIDIndex),
                                 Name = reader.GetString(nameIndex),
                                 PublisherID = reader.GetInt16(publisherIDIndex),
-                                YearOfPublication = reader.GetDateTime(yearOfPublicationIndex)
+                                YearOfPublication = reader.GetDateTime(yearOfPublicationIndex),
+                                Place = reader.GetString(placeIndex)
                             });
                         }
                     }
@@ -193,6 +199,7 @@ namespace MusicLibrary.Model.DAL
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar, 100).Value = booklet.Name;
                     cmd.Parameters.Add("@PublisherID", SqlDbType.SmallInt, 2).Value = booklet.PublisherID;
                     cmd.Parameters.Add("@YearOfPublication", SqlDbType.DateTime2).Value = booklet.YearOfPublication;
+                    cmd.Parameters.Add("@Place", SqlDbType.Char, 6).Value = booklet.Place;
                     cmd.Parameters.Add("@BookletID", SqlDbType.Int, 4).Direction = ParameterDirection.Output;
 
                     con.Open();
@@ -223,6 +230,7 @@ namespace MusicLibrary.Model.DAL
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar, 100).Value = booklet.Name;
                     cmd.Parameters.Add("@PublisherID", SqlDbType.SmallInt, 2).Value = booklet.PublisherID;
                     cmd.Parameters.Add("@YearOfPublication", SqlDbType.DateTime2).Value = booklet.YearOfPublication;
+                    cmd.Parameters.Add("@Place", SqlDbType.Char, 6).Value = booklet.Place;
 
                     con.Open();
                     cmd.ExecuteNonQuery();
