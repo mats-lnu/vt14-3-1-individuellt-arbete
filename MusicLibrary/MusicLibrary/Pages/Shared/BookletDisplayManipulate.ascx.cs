@@ -72,5 +72,19 @@ namespace MusicLibrary.Pages.Shared
                 BookletFormView.EditItemTemplate = BookletFormView.InsertItemTemplate;
             }
         }
+
+        protected void PublisherDropDownList_Load(object sender, EventArgs e)
+        {
+            DropDownList dp = (DropDownList)sender;
+
+            for (int i = 1; i <= 4; i += 1)
+            {
+                dp.Items.Add(new ListItem
+                {
+                    Text = String.Format("Förlag {0}", i),
+                    Value = "1"
+                });
+            }
+        }
     }
 }

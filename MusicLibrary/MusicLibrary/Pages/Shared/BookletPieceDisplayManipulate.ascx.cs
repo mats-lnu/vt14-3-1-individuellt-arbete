@@ -14,6 +14,8 @@ namespace MusicLibrary.Pages.Shared
 
         public bool ReadOnly { get; set; }
 
+        private IEnumerable<Piece> Pieces { get; set; }
+
         private Service _service;
         private Service Service
         {
@@ -34,13 +36,8 @@ namespace MusicLibrary.Pages.Shared
 
         public IEnumerable<Piece> BookletPiecesListView_GetData()
         {
-            //try
-            //{
-                return Service.GetPieces(BookletID);
-            //}
-            //catch
-            //{
-            //}
+            // TODO: Fundera på att cacha resultatsetet.
+            return Service.GetPieces(BookletID);
         }
 
         protected void BookletPiecesListView_ItemDataBound(object sender, ListViewItemEventArgs e)
@@ -72,6 +69,26 @@ namespace MusicLibrary.Pages.Shared
             if (ReadOnly)
             {
                 BookletPiecesListView.InsertItemPosition = InsertItemPosition.None;
+            }
+        }
+
+        protected void PieceDropDownList_Load(object sender, EventArgs e)
+        {
+            // TODO: Fundera på att cacha resultatsetet bookletPieces.
+            IEnumerable<Piece> allPieces = Service.GetPieces();
+            IEnumerable<Piece> bookletPieces = Service.GetPieces(BookletID);
+            List<Piece> filteredPieces = (from p in allPieces
+                                          where !(bookletPieces.Select(pz => pz.PieceID).ToList()).Contains(p.PieceID)
+                                          select p).ToList();
+            DropDownList dp = (DropDownList)sender;
+
+            foreach (Piece p in filteredPieces)
+            {
+                dp.Items.Add(new ListItem
+                {
+                    Text = String.Format("{0}, {1}, {2}, {3}", "Kompositör", p.Name, "Tonart", p.CatalogueNumber),
+                    Value = p.PieceID.ToString()
+                });
             }
         }
     }

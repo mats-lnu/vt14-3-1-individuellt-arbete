@@ -129,4 +129,10 @@ h2.pageheader {
 /* Booklet details insert/edit */
 input[type="text"], textarea, select {
     font-weight: normal;
+    font-size: 0.8rem;
+}
+
+a[title="Spara"], a[title="Radera"] {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

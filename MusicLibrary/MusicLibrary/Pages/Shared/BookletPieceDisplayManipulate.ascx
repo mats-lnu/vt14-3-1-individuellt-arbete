@@ -8,6 +8,7 @@
     OnItemDataBound="BookletPiecesListView_ItemDataBound"
     InsertItemPosition="LastItem"
     OnPreRender="BookletPiecesListView_PreRender">
+
     <LayoutTemplate>
         <table>
             <thead>
@@ -28,10 +29,11 @@
             </tbody>
         </table>
     </LayoutTemplate>
+
     <ItemTemplate>
         <tr>
             <td>
-                <asp:Literal ID="composerLiteral" runat="server" Text="Kompositör i klartext" />
+                <asp:Literal ID="composerLiteral" runat="server" Text="Kompositör" />
             </td>
             <td>
                 <asp:Literal ID="nameLiteral" runat="server" Text="<%#: Item.Name %>" />
@@ -40,13 +42,13 @@
                 <asp:Literal ID="catalogueNumberLiteral" runat="server" Text="<%#: Item.CatalogueNumber %>" />
             </td>
             <td>
-                <asp:Literal ID="scaleLiteral" runat="server" Text="Tonart i klartext" />
+                <asp:Literal ID="scaleLiteral" runat="server" Text="Tonart" />
             </td>
             <td>
                 <asp:Literal ID="instrumentsLiteral" runat="server" Text="Instrument, Instrument, Instrument" />
             </td>
             <td>
-                <asp:Literal ID="genreLiteral" runat="server" Text="Genre i klartext" />
+                <asp:Literal ID="genreLiteral" runat="server" Text="Genre" />
             </td>
             <asp:PlaceHolder ID="EditColumnPlaceHolder" runat="server" Visible="true" OnPreRender="PlaceHolder_PreRender">
                 <td class="buttonColumn">
@@ -57,12 +59,13 @@
             </asp:PlaceHolder>
         </tr>
     </ItemTemplate>
+
     <InsertItemTemplate>
         <tr>
             <td colspan="6">
                 <label class="custom-label">
                     Lägg till ny:
-                <asp:DropDownList ClientIDMode="Static" ID="PieceDropDownList" runat="server" />
+                <asp:DropDownList ID="PieceDropDownList" runat="server" OnLoad="PieceDropDownList_Load" />
                 </label>
             </td>
             <td class="buttonColumn">
@@ -72,7 +75,9 @@
             </td>
         </tr>
     </InsertItemTemplate>
+
     <EmptyDataTemplate>
         <p>Nothäftet har inget innehåll.</p>
     </EmptyDataTemplate>
+
 </asp:ListView>

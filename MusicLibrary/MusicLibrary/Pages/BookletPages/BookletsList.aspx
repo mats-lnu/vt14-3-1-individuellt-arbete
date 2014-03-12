@@ -11,9 +11,11 @@
         SelectMethod="ListViewBooklets_GetData"
         DataKeyNames="BookletID"
         OnItemDataBound="ListViewBooklets_ItemDataBound">
+
         <LayoutTemplate>
             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
         </LayoutTemplate>
+
         <ItemTemplate>
             <div class="row">
                 <div class="small-12 large-10 columns booklet-card">
@@ -22,10 +24,10 @@
                             <asp:Literal ID="nameLabel" runat="server" Text="<%#: Item.Name %>" />
                         </p>
                         <p><span class="custom-label">Kompositörer: </span>
-                            <asp:Literal ID="composersLabel" runat="server" Text="Kompositör i klartext; Kompositör i klartext" />
+                            <asp:Literal ID="composersLabel" runat="server" Text="Kompositör; Kompositör" />
                         </p>
                         <p><span class="custom-label">Förlag: </span>
-                            <asp:Literal ID="publisherLabel" runat="server" Text="Förlag i klartext" />
+                            <asp:Literal ID="publisherLabel" runat="server" Text="Förlag" />
                         </p>
                         <p><span class="custom-label">Utgivningsår: </span>
                             <asp:Literal ID="yearOfPubliationLabel" runat="server" Text="<%#: Item.YearOfPublication.Year %>" />
@@ -49,8 +51,10 @@
                 </div>
             </div>
         </ItemTemplate>
+
         <EmptyDataTemplate>
             <p>Inga nothäften hittades.</p>
         </EmptyDataTemplate>
+
     </asp:ListView>
 </asp:Content>

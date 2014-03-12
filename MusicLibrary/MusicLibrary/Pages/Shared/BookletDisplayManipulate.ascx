@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BookletDisplayManipulate.ascx.cs" Inherits="MusicLibrary.Pages.Shared.BookletDisplayManipulate" %>
-<%@ Register Src="~/Pages/Shared/BookletPieceDisplayManipulate.ascx" TagPrefix="uc1" TagName="BookletPieceDisplayManipulate" %>
 
+<%@ Register Src="~/Pages/Shared/BookletPieceDisplayManipulate.ascx" TagPrefix="uc1" TagName="BookletPieceDisplayManipulate" %>
 
 <asp:FormView ID="BookletFormView" runat="server"
     ItemType="MusicLibrary.Model.BLL.Booklet"
@@ -21,7 +21,7 @@
                     </p>
                     <p>
                         <span class="custom-label">Förlag: </span>
-                        <asp:Literal ID="publisherLiteral" runat="server" Text="Förlag i klartext" />
+                        <asp:Literal ID="publisherLiteral" runat="server" Text="Förlag" />
                     </p>
                     <p>
                         <span class="custom-label">Utgivningsår: </span>
@@ -82,7 +82,7 @@
                     <label class="small-12 large-6 columns custom-label">
                         Förlag:
                         <%-- Fixa dropdownboxen --%>
-                        <asp:DropDownList ID="publisherDropDownList" runat="server" />
+                        <asp:DropDownList ID="PublisherDropDownList" runat="server" OnLoad="PublisherDropDownList_Load"/>
                     </label>
                 </div>
                 <div class="row">
@@ -130,8 +130,8 @@
                             <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletDetails", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Cancel-icon-smaller.png" ToolTip="Avbryt" runat="server" Text="Avbryt" />
                         </li>
                         <li>
-                            <asp:LinkButton ID="SaveLinkButton" CssClass="button" ToolTip="Spara" runat="server">
-                                <asp:Image ID="SaveImage" ImageUrl="~/Content/Icons/Save-icon-smaller.png" AlternateText="Spara" runat="server" />
+                            <asp:LinkButton ID="SaveLinkButton" CssClass="button" ToolTip="Spara nothäfte" runat="server">
+                                <asp:Image ID="SaveImage" ImageUrl="~/Content/Icons/Save-icon-smaller.png" AlternateText="Spara nothäfte" runat="server" />
                             </asp:LinkButton>
                         </li>
                     </ul>
