@@ -12,6 +12,7 @@ namespace MusicLibrary
         {
             routes.MapPageRoute("Booklets", "Nothaften", "~/Pages/BookletPages/BookletsList.aspx");
             routes.MapPageRoute("BookletDetails", "Nothaften/{id}", "~/Pages/BookletPages/BookletDetails.aspx");
+            routes.MapPageRoute("BookletEdit", "Nothaften/{id}/Redirega", "~/Pages/BookletPages/BookletEdit.aspx");
         }
     }
 }

@@ -5,7 +5,9 @@
     DataKeyNames="PieceID"
     ItemType="MusicLibrary.Model.BLL.Piece"
     SelectMethod="BookletPiecesListView_GetData"
-    OnItemDataBound="BookletPiecesListView_ItemDataBound">
+    OnItemDataBound="BookletPiecesListView_ItemDataBound"
+    InsertItemPosition="LastItem"
+    OnPreRender="BookletPiecesListView_PreRender">
     <LayoutTemplate>
         <table>
             <thead>
@@ -16,7 +18,9 @@
                     <th>Tonart</th>
                     <th>Instrument</th>
                     <th>Genre</th>
-                    <th>Kompositionsår</th>
+                    <asp:PlaceHolder ID="EditHeaderColumnPlaceHolder" runat="server" Visible="true" OnPreRender="PlaceHolder_PreRender">
+                        <th></th>
+                    </asp:PlaceHolder>
                 </tr>
             </thead>
             <tbody>
@@ -44,11 +48,30 @@
             <td>
                 <asp:Literal ID="genreLiteral" runat="server" Text="Genre i klartext" />
             </td>
-            <td>
-                <asp:Literal ID="yearOfCompositionLiteral" runat="server" Text="<%#: Item.YearOfComposition.Year %>" />
-            </td>
+            <asp:PlaceHolder ID="EditColumnPlaceHolder" runat="server" Visible="true" OnPreRender="PlaceHolder_PreRender">
+                <td class="buttonColumn">
+                    <asp:LinkButton ID="DeleteLinkButton" CssClass="button" CommandName="Delete" runat="server" ToolTip="Radera">
+                        <asp:Image ID="DeleteImage" runat="server" ImageUrl="~/Content/Icons/Delete-icon-smaller.png" AlternateText="Radera" />
+                    </asp:LinkButton>
+                </td>
+            </asp:PlaceHolder>
         </tr>
     </ItemTemplate>
+    <InsertItemTemplate>
+        <tr>
+            <td colspan="6">
+                <label class="custom-label">
+                    Lägg till ny:
+                <asp:DropDownList ClientIDMode="Static" ID="PieceDropDownList" runat="server" />
+                </label>
+            </td>
+            <td class="buttonColumn">
+                <asp:LinkButton ID="InsertLinkButton" CssClass="button" CommandName="Insert" runat="server" ToolTip="Spara">
+                    <asp:Image ID="SaveImage" runat="server" ImageUrl="~/Content/Icons/Save-icon-smaller.png" AlternateText="Spara" />
+                </asp:LinkButton>
+            </td>
+        </tr>
+    </InsertItemTemplate>
     <EmptyDataTemplate>
         <p>Nothäftet har inget innehåll.</p>
     </EmptyDataTemplate>

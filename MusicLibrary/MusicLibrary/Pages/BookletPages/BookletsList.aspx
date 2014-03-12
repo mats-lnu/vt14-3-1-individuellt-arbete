@@ -9,7 +9,8 @@
         runat="server"
         ItemType="MusicLibrary.Model.BLL.Booklet"
         SelectMethod="ListViewBooklets_GetData"
-        DataKeyNames="BookletID" OnItemDataBound="ListViewBooklets_ItemDataBound">
+        DataKeyNames="BookletID"
+        OnItemDataBound="ListViewBooklets_ItemDataBound">
         <LayoutTemplate>
             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
         </LayoutTemplate>

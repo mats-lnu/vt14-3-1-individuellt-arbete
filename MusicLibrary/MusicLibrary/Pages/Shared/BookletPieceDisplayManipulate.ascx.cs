@@ -12,6 +12,8 @@ namespace MusicLibrary.Pages.Shared
     {
         public int BookletID { get; set; }
 
+        public bool ReadOnly { get; set; }
+
         private Service _service;
         private Service Service
         {
@@ -21,16 +23,15 @@ namespace MusicLibrary.Pages.Shared
             }
         }
 
+        public BookletPieceDisplayManipulate()
+        {
+            ReadOnly = true;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
         }
 
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
         public IEnumerable<Piece> BookletPiecesListView_GetData()
         {
             //try
@@ -54,6 +55,23 @@ namespace MusicLibrary.Pages.Shared
             if (literal != null && literal.Text == "1")
             {
                 literal.Text = "<span class=\"defaultValue\">Okänt kompositionsår</span>";
+            }
+        }
+
+        protected void PlaceHolder_PreRender(object sender, EventArgs e)
+        {
+            if (ReadOnly)
+            {
+                PlaceHolder item = (PlaceHolder)sender;
+                item.Visible = false;
+            }
+        }
+
+        protected void BookletPiecesListView_PreRender(object sender, EventArgs e)
+        {
+            if (ReadOnly)
+            {
+                BookletPiecesListView.InsertItemPosition = InsertItemPosition.None;
             }
         }
     }

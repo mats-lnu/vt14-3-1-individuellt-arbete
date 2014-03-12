@@ -89,6 +89,10 @@ h2.pageheader {
     font-size: 0.8rem;
 }
 
+.booklet-details-card-pieces table tbody td.buttonColumn {
+    text-align: center;
+}
+
 .booklet-details-card-other {
     position: relative;
     padding: 0 !important;
@@ -98,9 +102,9 @@ h2.pageheader {
     padding: 0 !important;
 }
 
-    .booklet-details-card-other p {
-        font-size: 0.8rem;
-    }
+.booklet-details-card-other p {
+    font-size: 0.8rem;
+}
 
 .booklet-details-card-other-note .custom-label {
     display: block;
@@ -121,3 +125,8 @@ h2.pageheader {
         width: 30px;
         height: 30px;
     }
+
+/* Booklet details insert/edit */
+input[type="text"], textarea, select {
+    font-weight: normal;
+}

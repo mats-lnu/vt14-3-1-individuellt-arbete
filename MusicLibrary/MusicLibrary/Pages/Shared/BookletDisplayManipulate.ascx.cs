@@ -11,8 +11,18 @@ namespace MusicLibrary.Pages.Shared
 {
     public partial class BookletDisplayManipulate : System.Web.UI.UserControl
     {
-        private Service _service;
+        public FormViewMode Mode {
+            get
+            {
+                return BookletFormView.DefaultMode;
+            }
+            set
+            {
+                BookletFormView.DefaultMode = value;
+            }
+        }
 
+        private Service _service;
         private Service Service
         {
             get
@@ -24,6 +34,8 @@ namespace MusicLibrary.Pages.Shared
         protected void Page_Load(object sender, EventArgs e)
         {
         }
+
+
 
         public Booklet BookletFormView_GetItem([RouteData]int id)
         {
@@ -50,6 +62,14 @@ namespace MusicLibrary.Pages.Shared
             if (literal != null && literal.Text == "ZZ0000")
             {
                 literal.Text = "<span class=\"defaultValue\">Ingen hyllplats</span>";
+            }
+        }
+
+        protected void BookletFormView_Init(object sender, EventArgs e)
+        {
+            if (BookletFormView.CurrentMode == FormViewMode.Edit)
+            {
+                BookletFormView.EditItemTemplate = BookletFormView.InsertItemTemplate;
             }
         }
     }
