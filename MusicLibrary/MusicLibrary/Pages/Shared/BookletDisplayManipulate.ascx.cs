@@ -35,8 +35,6 @@ namespace MusicLibrary.Pages.Shared
         {
         }
 
-
-
         public Booklet BookletFormView_GetItem([RouteData]int id)
         {
             //try

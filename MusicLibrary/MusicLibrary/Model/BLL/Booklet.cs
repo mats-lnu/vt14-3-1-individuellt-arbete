@@ -23,6 +23,7 @@ namespace MusicLibrary.Model.BLL
 
         [Required(ErrorMessage="Place can't be null.")]
         [StringLength(6, ErrorMessage="Place can't be longer than 6 characters.")]
+        [RegularExpression(@"^[A-Z]{2}\d{4}$", ErrorMessage="Place must be in format [AA0000]")]
         public string Place { get; set; }
     }
 }

@@ -5,5 +5,12 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-    <site:BookletDisplayManipulate runat="server" ID="BookletDisplayManipulate" />
+    <div class="row">
+        <div class="small-12 large-10 columns booklet-details-card">
+
+            <%-- User Control for displaying the Booklet-details. --%>
+            <site:BookletDisplayManipulate runat="server" ID="BookletDisplayManipulate" />
+
+        </div>
+    </div>
 </asp:Content>

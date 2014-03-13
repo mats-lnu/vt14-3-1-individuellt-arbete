@@ -5,5 +5,21 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
-    <site:BookletDisplayManipulate runat="server" ID="BookletDisplayManipulate" Mode="Edit" />
+    <div class="row">
+        <div class="small-12 large-10 columns booklet-details-card">
+            <%-- Success message --%>
+            <asp:PlaceHolder ID="SuccessMessagePlaceHolder" runat="server" Visible="false" >
+                <div data-alert="data-alert" class="alert-box success">
+                    <p>
+                        <asp:Literal ID="SuccessMessageLiteral" runat="server" />
+                    </p>
+                    <a href="#" class="close">&times;</a>
+                </div>
+            </asp:PlaceHolder>
+
+            <%-- User Control for editing the Booklet --%>
+            <site:BookletDisplayManipulate runat="server" ID="BookletDisplayManipulate" Mode="Edit" />
+
+        </div>
+    </div>
 </asp:Content>

@@ -10,25 +10,7 @@
 namespace MusicLibrary.Pages.BookletPages {
     
     
-    public partial class BookletEdit {
-        
-        /// <summary>
-        /// SuccessMessagePlaceHolder control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.PlaceHolder SuccessMessagePlaceHolder;
-        
-        /// <summary>
-        /// SuccessMessageLiteral control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal SuccessMessageLiteral;
+    public partial class BookletDetails {
         
         /// <summary>
         /// BookletDisplayManipulate control.

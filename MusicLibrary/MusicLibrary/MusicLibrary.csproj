@@ -105,13 +105,34 @@
     <Content Include="Pages\BookletPages\BookletEdit.aspx" />
     <Content Include="Pages\BookletPages\BookletsList.aspx" />
     <Content Include="Pages\Shared\BookletDisplayManipulate.ascx" />
-    <Content Include="Pages\Shared\BookletPieceDisplayManipulate.ascx" />
+    <Content Include="Pages\Temp\BookletPieceDisplayManipulate.ascx" />
     <Content Include="Pages\Shared\Site.Master" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\foundation.min.js" />
+    <Content Include="Scripts\foundation\foundation.abide.js" />
+    <Content Include="Scripts\foundation\foundation.accordion.js" />
+    <Content Include="Scripts\foundation\foundation.alert.js" />
+    <Content Include="Scripts\foundation\foundation.clearing.js" />
+    <Content Include="Scripts\foundation\foundation.dropdown.js" />
+    <Content Include="Scripts\foundation\foundation.equalizer.js" />
+    <Content Include="Scripts\foundation\foundation.interchange.js" />
+    <Content Include="Scripts\foundation\foundation.joyride.js" />
+    <Content Include="Scripts\foundation\foundation.js" />
+    <Content Include="Scripts\foundation\foundation.magellan.js" />
+    <Content Include="Scripts\foundation\foundation.offcanvas.js" />
+    <Content Include="Scripts\foundation\foundation.orbit.js" />
+    <Content Include="Scripts\foundation\foundation.reveal.js" />
+    <Content Include="Scripts\foundation\foundation.slider.js" />
+    <Content Include="Scripts\foundation\foundation.tab.js" />
+    <Content Include="Scripts\foundation\foundation.tooltip.js" />
+    <Content Include="Scripts\foundation\foundation.topbar.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
-    <Content Include="Scripts\modernizr-2.7.2.js" />
+    <Content Include="Scripts\vendor\fastclick.js" />
+    <Content Include="Scripts\vendor\jquery.cookie.js" />
+    <Content Include="Scripts\vendor\jquery.js" />
+    <Content Include="Scripts\vendor\modernizr.js" />
+    <Content Include="Scripts\vendor\placeholder.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -164,11 +185,11 @@
     <Compile Include="Pages\Shared\BookletDisplayManipulate.ascx.designer.cs">
       <DependentUpon>BookletDisplayManipulate.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Shared\BookletPieceDisplayManipulate.ascx.cs">
+    <Compile Include="Pages\Temp\BookletPieceDisplayManipulate.ascx.cs">
       <DependentUpon>BookletPieceDisplayManipulate.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\Shared\BookletPieceDisplayManipulate.ascx.designer.cs">
+    <Compile Include="Pages\Temp\BookletPieceDisplayManipulate.ascx.designer.cs">
       <DependentUpon>BookletPieceDisplayManipulate.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Site.Master.cs">

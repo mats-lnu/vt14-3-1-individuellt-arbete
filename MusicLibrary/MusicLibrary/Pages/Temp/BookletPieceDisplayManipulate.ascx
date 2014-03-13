@@ -2,14 +2,16 @@
 
 <asp:ListView ID="BookletPiecesListView"
     runat="server"
-    DataKeyNames="PieceID"
-    ItemType="MusicLibrary.Model.BLL.Piece"
+    DataKeyNames="PieceID, BookletID"
+    ItemType="MusicLibrary.Model.BLL.BookletContent"
     SelectMethod="BookletPiecesListView_GetData"
-    OnItemDataBound="BookletPiecesListView_ItemDataBound"
+    DeleteMethod="BookletPiecesListView_DeleteItem"
+    OnItemDataBound="BookletPiecesListView_ItemDataBound" InsertMethod="BookletPiecesListView_InsertItem"
     InsertItemPosition="LastItem"
     OnPreRender="BookletPiecesListView_PreRender">
 
     <LayoutTemplate>
+
         <table>
             <thead>
                 <tr>
@@ -33,22 +35,22 @@
     <ItemTemplate>
         <tr>
             <td>
-                <asp:Literal ID="composerLiteral" runat="server" Text="Kompositör" />
+                <asp:Literal ID="composerLiteral" runat="server" Text="" />
             </td>
             <td>
-                <asp:Literal ID="nameLiteral" runat="server" Text="<%#: Item.Name %>" />
+                <asp:Literal ID="nameLiteral" runat="server" Text="" />
             </td>
             <td>
-                <asp:Literal ID="catalogueNumberLiteral" runat="server" Text="<%#: Item.CatalogueNumber %>" />
+                <asp:Literal ID="catalogueNumberLiteral" runat="server" Text="" />
             </td>
             <td>
-                <asp:Literal ID="scaleLiteral" runat="server" Text="Tonart" />
+                <asp:Literal ID="scaleLiteral" runat="server" Text="" />
             </td>
             <td>
-                <asp:Literal ID="instrumentsLiteral" runat="server" Text="Instrument, Instrument, Instrument" />
+                <asp:Literal ID="instrumentsLiteral" runat="server" Text="" />
             </td>
             <td>
-                <asp:Literal ID="genreLiteral" runat="server" Text="Genre" />
+                <asp:Literal ID="genreLiteral" runat="server" Text="" />
             </td>
             <asp:PlaceHolder ID="EditColumnPlaceHolder" runat="server" Visible="true" OnPreRender="PlaceHolder_PreRender">
                 <td class="buttonColumn">
@@ -65,7 +67,13 @@
             <td colspan="6">
                 <label class="custom-label">
                     Lägg till ny:
-                <asp:DropDownList ID="PieceDropDownList" runat="server" OnLoad="PieceDropDownList_Load" />
+                <asp:DropDownList ID="PieceDropDownList"
+                    ItemType="MusicLibrary.Model.BLL.Piece"
+                    DataValueField="PieceID"
+                    SelectMethod="PieceDropDownList_GetData"
+                    DataTextField="PieceID"
+                    SelectedValue="<%# BindItem.PieceID %>"
+                    runat="server" OnPreRender="PieceDropDownList_PreRender" />
                 </label>
             </td>
             <td class="buttonColumn">

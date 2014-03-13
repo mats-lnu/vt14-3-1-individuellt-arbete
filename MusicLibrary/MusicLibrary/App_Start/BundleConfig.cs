@@ -7,10 +7,12 @@ namespace MusicLibrary
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Scripts/modernizr").Include(
-                "~/Scripts/modernizr-*"
+                "~/Scripts/vendor/modernizr.js"
             ));
 
             bundles.Add(new ScriptBundle("~/Scripts/foundation").Include(
+                "~/Scripts/vendor/jquery.js",
+                "~/Scripts/vendor/fastclick.js",
                 "~/Scripts/foundation.min.js"
             ));
 

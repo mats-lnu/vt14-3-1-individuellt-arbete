@@ -11,7 +11,12 @@ namespace MusicLibrary.Pages.BookletPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["SuccessMessage"] != null)
+            {
+                SuccessMessagePlaceHolder.Visible = true;
+                SuccessMessageLiteral.Text = Session["SuccessMessage"].ToString();
+                Session.Remove("SuccessMessage");
+            }
         }
     }
 }

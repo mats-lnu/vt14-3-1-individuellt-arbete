@@ -1,4 +1,5 @@
 ﻿using MusicLibrary.Model.BLL;
+using Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,12 @@ namespace MusicLibrary.Pages.BookletPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //if (Session["SuccessMessage"] != null)
+            //{
+            //    ListViewBooklets.SuccessMessagePlaceHolder.Visible = true;
+            //    ListViewBooklets.SuccessMessageLiteral.Text = Session["SuccessMessage"].ToString();
+            //    Session.Remove("SuccessMessage");
+            //}
         }
 
         // The return type can be changed to IEnumerable, however to support
@@ -23,15 +29,15 @@ namespace MusicLibrary.Pages.BookletPages
         //     string sortByExpression
         public IEnumerable<MusicLibrary.Model.BLL.Booklet> ListViewBooklets_GetData()
         {
-            //try
-            //{
+            try
+            {
                 return new Service().GetBooklets();
-            //}
-            //catch
-            //{
-            //    ModelState.AddModelError(String.Empty, "Ett fel inträffade då nothäftena hämtades.");
-            //    return null;
-            //}
+            }
+            catch
+            {
+                ModelState.AddModelError(String.Empty, Strings.SelectBookletsErrorSwedish);
+                return null;
+            }
         }
 
         protected void ListViewBooklets_ItemDataBound(object sender, ListViewItemEventArgs e)

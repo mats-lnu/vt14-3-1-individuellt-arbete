@@ -117,14 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DeleteContentRecordErrorSwedish" xml:space="preserve">
+    <value>Ett fel inträffade när stycket skulle tas bort från innehållslistan.</value>
+  </data>
+  <data name="DeleteContentRecordSuccessSwedish" xml:space="preserve">
+    <value>Stycket har tagits bort från innehållslistan.</value>
+  </data>
   <data name="DeleteRecordError" xml:space="preserve">
     <value>An error occurred while deleting the data.</value>
+  </data>
+  <data name="InsertContentRecordErrorSwedish" xml:space="preserve">
+    <value>Ett fel inträffade när stycket skulle läggas till i innehållslistan.</value>
+  </data>
+  <data name="InsertContentRecordSuccessSwedish" xml:space="preserve">
+    <value>Stycket har lagts till i innehållslistan.</value>
   </data>
   <data name="InsertRecordError" xml:space="preserve">
     <value>An error occurred while inserting the data.</value>
   </data>
   <data name="SaveDataError" xml:space="preserve">
     <value>An error occurred while saving the data.</value>
+  </data>
+  <data name="SelectBookletsErrorSwedish" xml:space="preserve">
+    <value>Ett fel inträffade när nothäftena hämtades.</value>
   </data>
   <data name="SelectRecordError" xml:space="preserve">
     <value>An error occurred while selecting the data.</value>

@@ -37,6 +37,19 @@ h2.pageheader {
     font-style: italic;
 }
 
+.alert-box {
+    border: none;
+}
+
+    .alert-box p {
+        margin-bottom: 0;
+        font-size: 0.8rem;
+    }
+
+    .alert-box.error {
+        background-color: #c60f13;
+    }
+
 /* Listing booklets */
 .booklet-card {
     padding: 10px !important;
@@ -132,7 +145,12 @@ input[type="text"], textarea, select {
     font-size: 0.8rem;
 }
 
-a[title="Spara"], a[title="Radera"] {
+a[title="Spara"] {
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+a[title="Radera"] {
+    margin-top: 2px;
+    margin-bottom: 2px;
 }

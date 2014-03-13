@@ -41,5 +41,8 @@
         </div>
     </form>
     <%: System.Web.Optimization.Scripts.Render("~/Scripts/foundation") %>
+    <script>
+        $(document).foundation();
+    </script>
 </body>
 </html>

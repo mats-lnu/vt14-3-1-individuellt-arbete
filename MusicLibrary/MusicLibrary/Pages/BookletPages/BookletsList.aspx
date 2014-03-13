@@ -13,6 +13,18 @@
         OnItemDataBound="ListViewBooklets_ItemDataBound">
 
         <LayoutTemplate>
+            <%-- Success message --%>
+            <asp:PlaceHolder ID="SuccessMessagePlaceHolder" runat="server" Visible="false" >
+                <div data-alert="data-alert" class="alert-box success">
+                    <p>
+                        <asp:Literal ID="SuccessMessageLiteral" runat="server" />
+                    </p>
+                    <a href="#" class="close">&times;</a>
+                </div>
+            </asp:PlaceHolder>
+
+            <%-- Error message --%>
+
             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
         </LayoutTemplate>
 

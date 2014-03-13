@@ -61,11 +61,47 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade när stycket skulle tas bort från innehållslistan..
+        /// </summary>
+        internal static string DeleteContentRecordErrorSwedish {
+            get {
+                return ResourceManager.GetString("DeleteContentRecordErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stycket har tagits bort från innehållslistan..
+        /// </summary>
+        internal static string DeleteContentRecordSuccessSwedish {
+            get {
+                return ResourceManager.GetString("DeleteContentRecordSuccessSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An error occurred while deleting the data..
         /// </summary>
         internal static string DeleteRecordError {
             get {
                 return ResourceManager.GetString("DeleteRecordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade när stycket skulle läggas till i innehållslistan..
+        /// </summary>
+        internal static string InsertContentRecordErrorSwedish {
+            get {
+                return ResourceManager.GetString("InsertContentRecordErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stycket har lagts till i innehållslistan..
+        /// </summary>
+        internal static string InsertContentRecordSuccessSwedish {
+            get {
+                return ResourceManager.GetString("InsertContentRecordSuccessSwedish", resourceCulture);
             }
         }
         
@@ -84,6 +120,15 @@ namespace Resources {
         internal static string SaveDataError {
             get {
                 return ResourceManager.GetString("SaveDataError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade när nothäftena hämtades..
+        /// </summary>
+        internal static string SelectBookletsErrorSwedish {
+            get {
+                return ResourceManager.GetString("SelectBookletsErrorSwedish", resourceCulture);
             }
         }
         
