@@ -124,6 +124,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade när nothäftets innehåll skulle hämtas..
+        /// </summary>
+        internal static string SelectBookletContentRecordsErrorSwedish {
+            get {
+                return ResourceManager.GetString("SelectBookletContentRecordsErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nothäfte nummer {0} finns inte i databasen..
+        /// </summary>
+        internal static string SelectBookletRecordByIDErrorSwedish {
+            get {
+                return ResourceManager.GetString("SelectBookletRecordByIDErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ett fel inträffade när nothäftena hämtades..
         /// </summary>
         internal static string SelectBookletsErrorSwedish {
@@ -133,11 +151,38 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ett fel infräffade när musikstycken till dropdown-listan skulle hämtas..
+        /// </summary>
+        internal static string SelectPiecesToDropDownListErrorSwedish {
+            get {
+                return ResourceManager.GetString("SelectPiecesToDropDownListErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An error occurred while selecting the data..
         /// </summary>
         internal static string SelectRecordError {
             get {
                 return ResourceManager.GetString("SelectRecordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade när ändringarna skulle sparas..
+        /// </summary>
+        internal static string UpdateBookletRecordErrorSwedish {
+            get {
+                return ResourceManager.GetString("UpdateBookletRecordErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ändringarna har sparats..
+        /// </summary>
+        internal static string UpdateBookletRecordSuccessSwedish {
+            get {
+                return ResourceManager.GetString("UpdateBookletRecordSuccessSwedish", resourceCulture);
             }
         }
         

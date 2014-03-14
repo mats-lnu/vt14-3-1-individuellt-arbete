@@ -6,12 +6,12 @@
     ItemType="MusicLibrary.Model.BLL.BookletContent"
     SelectMethod="BookletPiecesListView_GetData"
     DeleteMethod="BookletPiecesListView_DeleteItem"
-    OnItemDataBound="BookletPiecesListView_ItemDataBound" InsertMethod="BookletPiecesListView_InsertItem"
+    OnItemDataBound="BookletPiecesListView_ItemDataBound"
+    InsertMethod="BookletPiecesListView_InsertItem"
     InsertItemPosition="LastItem"
     OnPreRender="BookletPiecesListView_PreRender">
 
     <LayoutTemplate>
-
         <table>
             <thead>
                 <tr>
@@ -21,12 +21,14 @@
                     <th>Tonart</th>
                     <th>Instrument</th>
                     <th>Genre</th>
+                    <%-- This column is hidden in ReadOnly-mode. --%>
                     <asp:PlaceHolder ID="EditHeaderColumnPlaceHolder" runat="server" Visible="true" OnPreRender="PlaceHolder_PreRender">
                         <th></th>
                     </asp:PlaceHolder>
                 </tr>
             </thead>
             <tbody>
+                <%-- PlaceHolder for ItemTemplate. --%>
                 <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
             </tbody>
         </table>
@@ -52,6 +54,7 @@
             <td>
                 <asp:Literal ID="genreLiteral" runat="server" Text="" />
             </td>
+            <%-- This column is hidden in ReadOnly-mode. --%>
             <asp:PlaceHolder ID="EditColumnPlaceHolder" runat="server" Visible="true" OnPreRender="PlaceHolder_PreRender">
                 <td class="buttonColumn">
                     <asp:LinkButton ID="DeleteLinkButton" CssClass="button" CommandName="Delete" runat="server" ToolTip="Radera">
@@ -62,6 +65,7 @@
         </tr>
     </ItemTemplate>
 
+    <%-- InsertItemTemplate is hidden in ReadOnly-mode. --%>
     <InsertItemTemplate>
         <tr>
             <td colspan="6">
@@ -84,6 +88,7 @@
         </tr>
     </InsertItemTemplate>
 
+    <%-- If no BookletContent existed from the Booklet. --%>
     <EmptyDataTemplate>
         <p>Nothäftet har inget innehåll.</p>
     </EmptyDataTemplate>

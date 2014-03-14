@@ -24,12 +24,15 @@
             </asp:PlaceHolder>
 
             <%-- Error message --%>
+            <asp:ValidationSummary ID="BookletListValidationSummary" data-alert="data-alert" CssClass="alert-box error" runat="server" ShowModelStateErrors="true" DisplayMode="List" />
 
+            <%-- PlaceHolder for ItemTempate. --%>
             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
         </LayoutTemplate>
 
         <ItemTemplate>
             <div class="row">
+                <%-- This section displays info aboute the booklets. --%>
                 <div class="small-12 large-10 columns booklet-card">
                     <div class="booklet-card-info small-12 medium-9 large-10 columns">
                         <p><span class="custom-label">Titel: </span>
@@ -48,6 +51,7 @@
                             <asp:Literal ID="placeLabel" runat="server" Text="<%#: Item.Place %>"></asp:Literal>
                         </p>
                     </div>
+                    <%-- This section contains command buttons. --%>
                     <div class="booklet-card-buttons small-12 medium-3 large-2 columns">
                         <ul class="button-list">
                             <li>
@@ -64,6 +68,7 @@
             </div>
         </ItemTemplate>
 
+        <%-- If no booklets where found in table appSchema.Booklet. --%>
         <EmptyDataTemplate>
             <p>Inga nothäften hittades.</p>
         </EmptyDataTemplate>

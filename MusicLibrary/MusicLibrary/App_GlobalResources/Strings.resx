@@ -138,11 +138,26 @@
   <data name="SaveDataError" xml:space="preserve">
     <value>An error occurred while saving the data.</value>
   </data>
+  <data name="SelectBookletContentRecordsErrorSwedish" xml:space="preserve">
+    <value>Ett fel inträffade när nothäftets innehåll skulle hämtas.</value>
+  </data>
+  <data name="SelectBookletRecordByIDErrorSwedish" xml:space="preserve">
+    <value>Nothäfte nummer {0} finns inte i databasen.</value>
+  </data>
   <data name="SelectBookletsErrorSwedish" xml:space="preserve">
     <value>Ett fel inträffade när nothäftena hämtades.</value>
   </data>
+  <data name="SelectPiecesToDropDownListErrorSwedish" xml:space="preserve">
+    <value>Ett fel infräffade när musikstycken till dropdown-listan skulle hämtas.</value>
+  </data>
   <data name="SelectRecordError" xml:space="preserve">
     <value>An error occurred while selecting the data.</value>
+  </data>
+  <data name="UpdateBookletRecordErrorSwedish" xml:space="preserve">
+    <value>Ett fel inträffade när ändringarna skulle sparas.</value>
+  </data>
+  <data name="UpdateBookletRecordSuccessSwedish" xml:space="preserve">
+    <value>Ändringarna har sparats.</value>
   </data>
   <data name="UpdateRecordError" xml:space="preserve">
     <value>An error occurred while updating the data.</value>
