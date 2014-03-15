@@ -138,14 +138,14 @@
   <data name="InsertNewBookletErrorSwedish" xml:space="preserve">
     <value>Ett fel inträffade när det nya nothäftet sparades.</value>
   </data>
-  <data name="InsertNewBookletNoContentErrorSwedish" xml:space="preserve">
-    <value>Du måste ha minst ett stycke i innehållslistan.</value>
-  </data>
   <data name="InsertNewBookletSuccessSwedish" xml:space="preserve">
     <value>Det nya nothäftet har sparats i databasen.</value>
   </data>
   <data name="InsertRecordError" xml:space="preserve">
     <value>An error occurred while inserting the data.</value>
+  </data>
+  <data name="InsertUpdateBookletNoContentErrorSwedish" xml:space="preserve">
+    <value>Du måste ha minst ett stycke i innehållslistan.</value>
   </data>
   <data name="SaveDataError" xml:space="preserve">
     <value>An error occurred while saving the data.</value>

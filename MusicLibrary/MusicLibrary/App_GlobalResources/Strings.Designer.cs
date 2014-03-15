@@ -124,15 +124,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Du måste ha minst ett stycke i innehållslistan..
-        /// </summary>
-        internal static string InsertNewBookletNoContentErrorSwedish {
-            get {
-                return ResourceManager.GetString("InsertNewBookletNoContentErrorSwedish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Det nya nothäftet har sparats i databasen..
         /// </summary>
         internal static string InsertNewBookletSuccessSwedish {
@@ -147,6 +138,15 @@ namespace Resources {
         internal static string InsertRecordError {
             get {
                 return ResourceManager.GetString("InsertRecordError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Du måste ha minst ett stycke i innehållslistan..
+        /// </summary>
+        internal static string InsertUpdateBookletNoContentErrorSwedish {
+            get {
+                return ResourceManager.GetString("InsertUpdateBookletNoContentErrorSwedish", resourceCulture);
             }
         }
         

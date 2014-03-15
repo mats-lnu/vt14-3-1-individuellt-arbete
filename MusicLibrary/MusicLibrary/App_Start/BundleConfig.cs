@@ -13,7 +13,8 @@ namespace MusicLibrary
             bundles.Add(new ScriptBundle("~/Scripts/foundation").Include(
                 "~/Scripts/vendor/jquery.js",
                 "~/Scripts/vendor/fastclick.js",
-                "~/Scripts/foundation.min.js"
+                "~/Scripts/foundation.min.js",
+                "~/Scripts/siteScript.js"
             ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(

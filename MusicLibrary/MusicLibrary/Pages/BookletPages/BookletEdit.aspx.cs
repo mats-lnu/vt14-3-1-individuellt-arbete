@@ -6,6 +6,7 @@ namespace MusicLibrary.Pages.BookletPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Show success message if there is one.
             if (Session["SuccessMessage"] != null)
             {
                 SuccessMessagePlaceHolder.Visible = true;

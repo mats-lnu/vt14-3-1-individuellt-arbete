@@ -94,6 +94,7 @@
                     <%-- Validation controls --%>
                     <asp:RequiredFieldValidator ID="yearRequiredFieldValidator" runat="server" CssClass="error" Display="Dynamic" ControlToValidate="yearOfPublicationTextBox" SetFocusOnError="True" Text="Tomt fält" ErrorMessage="Fältet för utgivningsår får inte vara tomt" />
                     <asp:RegularExpressionValidator ID="yearRegularExpressionValidator" runat="server" CssClass="error" ErrorMessage="Inmatningen i fältet för utgivningår måste hålla formatet [ÅÅÅÅ]" Display="Dynamic" ControlToValidate="yearOfPublicationTextBox" ValidationExpression="^\d{4}$" Text="Ogiltigt format" />
+                    <asp:CustomValidator ID="CheckYearValidator" CssClass="error" runat="server" ErrorMessage="Utgivningsår får inte vara i framtiden." ControlToValidate="yearOfPublicationTextBox" ClientValidationFunction="CheckYear" OnServerValidate="CheckYear" Display="Dynamic" Text="Felaktigt årtal" />
                 </label>
             </div>
             <div class="row">

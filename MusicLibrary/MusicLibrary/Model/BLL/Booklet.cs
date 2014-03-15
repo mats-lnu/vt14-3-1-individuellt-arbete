@@ -19,6 +19,7 @@ namespace MusicLibrary.Model.BLL
         public int PublisherID { get; set; }
 
         [Required(ErrorMessage = "YearOfPublication can't be null.")]
+        [CheckDateTimeAttribute(ErrorMessage = "YearOfPublication can't be a year in the future")]
         public DateTime YearOfPublication { get; set; }
 
         [Required(ErrorMessage="Place can't be null.")]

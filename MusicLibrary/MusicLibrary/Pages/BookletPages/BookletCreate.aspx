@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Shared/Site.Master" AutoEventWireup="true" CodeBehind="BookletCreate.aspx.cs" Inherits="MusicLibrary.Pages.BookletPages.BookletCreate" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
-    <h2 class="pageheader">Nothäfte</h2>
+    <h2 class="pageheader">Skapa nytt nothäfte</h2>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
@@ -22,11 +22,11 @@
             <asp:ValidationSummary ID="BookletEditValidationSummary" data-alert="data-alert" CssClass="alert-box error" runat="server" ShowModelStateErrors="true" DisplayMode="List" />
 
             <%-- User Control for editing booklet --%>
-            <asp:FormView ID="BookletCreateFromView" runat="server"
+            <asp:FormView ID="BookletCreateFormView" runat="server"
                 ItemType="MusicLibrary.Model.BLL.Booklet"
                 DataKeyNames="BookletID"
                 DefaultMode="Insert"
-                InsertMethod="BooklerCreateFromView_InsertItem"
+                InsertMethod="BookletCreateFromView_InsertItem"
                 RenderOuterTable="false"
                 OnPreRender="BookletCreateFromView_PreRender">
 
@@ -44,7 +44,7 @@
                         <div class="row">
                             <label class="small-12 large-6 columns custom-label">
                                 Förlag:
-                                <asp:DropDownList ID="PublisherDropDownList" runat="server" OnPreRender="PublisherDropDownList_PreRender" />
+                                <asp:DropDownList ID="publisherDropDownList" runat="server" OnPreRender="PublisherDropDownList_PreRender" />
                                 <%-- No validation required. --%>
                             </label>
                         </div>
@@ -55,6 +55,7 @@
                                 <%-- Validation controls --%>
                                 <asp:RequiredFieldValidator ID="yearRequiredFieldValidator" runat="server" CssClass="error" Display="Dynamic" ControlToValidate="yearOfPublicationTextBox" SetFocusOnError="True" Text="Tomt fält" ErrorMessage="Fältet för utgivningsår får inte vara tomt" />
                                 <asp:RegularExpressionValidator ID="yearRegularExpressionValidator" runat="server" CssClass="error" ErrorMessage="Inmatningen i fältet för utgivningår måste hålla formatet [ÅÅÅÅ]" Display="Dynamic" ControlToValidate="yearOfPublicationTextBox" ValidationExpression="^\d{4}$" Text="Ogiltigt format" />
+                                <asp:CustomValidator ID="CheckYearValidator" CssClass="error" runat="server" ErrorMessage="Utgivningsår får inte vara i framtiden." ControlToValidate="yearOfPublicationTextBox" ClientValidationFunction="CheckYear" OnServerValidate="CheckYear" Display="Dynamic" Text="Felaktigt årtal" />
                             </label>
                         </div>
                         <div class="row">
@@ -166,7 +167,7 @@
                                 <div class="row">
                                     <label class="small-12 large-10 columns custom-label">
                                         Anteckningar:
-                                        <asp:TextBox ID="notesTextBox" runat="server" MaxLength="400" TextMode="MultiLine" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus fringilla placerat orci, sed lacinia purus tempus eu. Donec tristique ligula." />
+                                        <asp:TextBox ID="notesTextBox" runat="server" MaxLength="400" TextMode="MultiLine" Text="" />
                                         <%-- No validation required. --%>
                                     </label>
                                 </div>
@@ -175,7 +176,7 @@
                                 <div class="row">
                                     <label class="small-12 large-5 columns custom-label">
                                         Utlånad till:
-                                        <asp:TextBox ID="borrowedToTextBox" MaxLength="40" runat="server" Text="Kompis" />
+                                        <asp:TextBox ID="borrowedToTextBox" MaxLength="40" runat="server" Text="" />
                                         <%-- No validation required. --%>
                                     </label>
                                 </div>

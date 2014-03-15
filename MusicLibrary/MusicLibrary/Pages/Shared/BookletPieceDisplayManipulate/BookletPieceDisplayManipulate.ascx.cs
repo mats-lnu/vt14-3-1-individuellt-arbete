@@ -108,52 +108,59 @@ namespace MusicLibrary.Pages.Shared
         /// <param name="e"></param>
         protected void BookletPiecesListView_ItemDataBound(object sender, ListViewItemEventArgs e)
         {
-            BookletContent bc = e.Item.DataItem as BookletContent;
-            // TODO: Cahca detta.
-            IEnumerable<Piece> pieces = Service.GetPieces();
-            Piece piece = pieces.FirstOrDefault(p => p.PieceID == bc.PieceID);
+            try
+            {
+                BookletContent bc = e.Item.DataItem as BookletContent;
+                // TODO: Cahca detta.
+                IEnumerable<Piece> pieces = Service.GetPieces();
+                Piece piece = pieces.FirstOrDefault(p => p.PieceID == bc.PieceID);
 
-            Literal literal = e.Item.FindControl("composerLiteral") as Literal;
-            if (literal != null)
-            {
-                literal.Text = "Kompositör";
-            }
-            literal = e.Item.FindControl("catalogueNumberLiteral") as Literal;
-            if (literal != null && literal.Text == "Inget nummer")
-            {
-                literal.Text = "<span class=\"defaultValue\">Inget nummer</span>";
-            }
-            literal = e.Item.FindControl("nameLiteral") as Literal;
-            if (literal != null)
-            {
-                literal.Text = piece.Name;
-            }
-            literal = e.Item.FindControl("catalogueNumberLiteral") as Literal;
-            if (literal != null)
-            {
-                if (piece.CatalogueNumber == "Inget nummer")
+                Literal literal = e.Item.FindControl("composerLiteral") as Literal;
+                if (literal != null)
+                {
+                    literal.Text = "Kompositör";
+                }
+                literal = e.Item.FindControl("catalogueNumberLiteral") as Literal;
+                if (literal != null && literal.Text == "Inget nummer")
                 {
                     literal.Text = "<span class=\"defaultValue\">Inget nummer</span>";
                 }
-                else
+                literal = e.Item.FindControl("nameLiteral") as Literal;
+                if (literal != null)
                 {
-                    literal.Text = piece.CatalogueNumber;
+                    literal.Text = piece.Name;
+                }
+                literal = e.Item.FindControl("catalogueNumberLiteral") as Literal;
+                if (literal != null)
+                {
+                    if (piece.CatalogueNumber == "Inget nummer")
+                    {
+                        literal.Text = "<span class=\"defaultValue\">Inget nummer</span>";
+                    }
+                    else
+                    {
+                        literal.Text = piece.CatalogueNumber;
+                    }
+                }
+                literal = e.Item.FindControl("scaleLiteral") as Literal;
+                if (literal != null)
+                {
+                    literal.Text = "Tonart";
+                }
+                literal = e.Item.FindControl("instrumentsLiteral") as Literal;
+                if (literal != null)
+                {
+                    literal.Text = "Instrument, Instrument, Instrument";
+                }
+                literal = e.Item.FindControl("genreLiteral") as Literal;
+                if (literal != null)
+                {
+                    literal.Text = "Genre";
                 }
             }
-            literal = e.Item.FindControl("scaleLiteral") as Literal;
-            if (literal != null)
+            catch
             {
-                literal.Text = "Tonart";
-            }
-            literal = e.Item.FindControl("instrumentsLiteral") as Literal;
-            if (literal != null)
-            {
-                literal.Text = "Instrument, Instrument, Instrument";
-            }
-            literal = e.Item.FindControl("genreLiteral") as Literal;
-            if (literal != null)
-            {
-                literal.Text = "Genre";
+                Page.ModelState.AddModelError(String.Empty, Strings.GeneralErrorSwedish);
             }
         }
 

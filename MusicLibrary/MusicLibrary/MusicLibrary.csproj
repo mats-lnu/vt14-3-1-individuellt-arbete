@@ -123,6 +123,7 @@
     <Content Include="Scripts\foundation\foundation.topbar.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\siteScript.js" />
     <Content Include="Scripts\vendor\fastclick.js" />
     <Content Include="Scripts\vendor\jquery.cookie.js" />
     <Content Include="Scripts\vendor\jquery.js" />
@@ -138,6 +139,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
+    <Compile Include="App_Infrastructure\CheckDateTimeAttribute.cs" />
     <Compile Include="App_Infrastructure\ValidationExtension.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

@@ -184,10 +184,10 @@ namespace MusicLibrary.Model.BLL
         /// <param name="booklet">An instance of MusicLibrary.Model.BLL.Booklet.</param>
         public void SaveBooklet(Booklet booklet)
         {
-            ICollection<ValidationResult> validatonResults = new List<ValidationResult>();
+            ICollection<ValidationResult> validationResults = new List<ValidationResult>();
 
             // Using extension method for validating.
-            if (booklet.Validate(out validatonResults))
+            if (booklet.Validate(out validationResults))
             {
                 if (booklet.BookletID == 0)
                 {
@@ -201,7 +201,7 @@ namespace MusicLibrary.Model.BLL
             else
             {
                 var ex = new ApplicationException(Strings.SaveDataError);
-                ex.Data.Add("ValidationResult", validatonResults);
+                ex.Data.Add("ValidationResult", validationResults);
                 throw ex;
             }
         }

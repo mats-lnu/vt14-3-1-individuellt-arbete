@@ -31,6 +31,7 @@ namespace MusicLibrary.Model.BLL
         public int GenreID { get; set; }
 
         [Required(ErrorMessage = "YearOfComposition can't be null.")]
+        [CheckDateTimeAttribute(ErrorMessage = "YearOfCompoition can't be a year in the future")]
         public DateTime YearOfComposition { get; set; }
     }
 }

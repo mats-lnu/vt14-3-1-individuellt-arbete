@@ -27,7 +27,7 @@
                                 <asp:HyperLink ID="HyperLink2" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Gå till Nothäften" runat="server">Nothäften</asp:HyperLink>
                             </li>
                             <li>
-                                <asp:HyperLink ID="HyperLink3" NavigateUrl="~/Pages/BookletPages/BookletCreate.aspx" ToolTip="Lägg till nothäfte" runat="server">Lägg till nothäfte</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink3" NavigateUrl="<%$ RouteUrl:routename=BookletCreate %>" ToolTip="Lägg till nothäfte" runat="server">Lägg till nothäfte</asp:HyperLink>
                             </li>
                         </ul>
                     </nav>
