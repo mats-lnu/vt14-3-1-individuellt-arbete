@@ -95,6 +95,7 @@
     <Content Include="Content\SiteStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
+    <Content Include="Pages\BookletPages\BookletCreate.aspx" />
     <Content Include="Pages\BookletPages\BookletDetails.aspx" />
     <Content Include="Pages\BookletPages\BookletEdit.aspx" />
     <Content Include="Pages\BookletPages\BookletsList.aspx" />
@@ -151,6 +152,13 @@
     <Compile Include="Model\DAL\BookletDAL.cs" />
     <Compile Include="Model\DAL\DALBase.cs" />
     <Compile Include="Model\DAL\PieceDAL.cs" />
+    <Compile Include="Pages\BookletPages\BookletCreate.aspx.cs">
+      <DependentUpon>BookletCreate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BookletPages\BookletCreate.aspx.designer.cs">
+      <DependentUpon>BookletCreate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\BookletPages\BookletDetails.aspx.cs">
       <DependentUpon>BookletDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

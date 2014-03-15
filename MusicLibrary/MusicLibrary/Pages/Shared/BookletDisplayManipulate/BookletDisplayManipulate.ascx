@@ -7,8 +7,7 @@
     SelectMethod="BookletFormView_GetItem"
     UpdateMethod="BookletFormView_UpdateItem"
     OnDataBound="BookletFormView_DataBound"
-    RenderOuterTable="false"
-    OnInit="BookletFormView_Init">
+    RenderOuterTable="false">
 
     <ItemTemplate>
         <%-- This section displays all info in table appSchema.Booklet with the key value in the Url. --%>
@@ -35,7 +34,7 @@
         <div class="small-12 columns booklet-details-card-pieces">
             <p><span class="custom-label">Innehåll:</span></p>
             <%-- A User Control displaying content of the booklet. --%>
-            <site:BookletPieceDisplayManipulate runat="server" ID="BookletPieceDisplayManipulate1" BookletID="<%$ routeValue:id %>" />
+            <site:BookletPieceDisplayManipulate runat="server" ID="BookletPieceDisplayManipulate1" BookletID="<%$ routeValue:id %>" Mode="ReadOnly" />
         </div>
 
         <%-- This section displays info from tables appSchema.Note and appSchema.BorrowdTo where the key is the same as for the booklet. --%>
@@ -70,7 +69,7 @@
         </div>
     </ItemTemplate>
 
-    <InsertItemTemplate>
+    <EditItemTemplate>
         <%-- In this section the user canedit data in table appSchema.Booklet. --%>
         <div class="small-12 columns booklet-details-card-info">
             <div class="row">
@@ -112,7 +111,7 @@
         <div class="small-12 columns booklet-details-card-pieces">
             <p><span class="custom-label">Innehåll:</span></p>
             <%-- A User Control editing the content of the booklet. --%>
-            <site:BookletPieceDisplayManipulate runat="server" ID="BookletPieceDisplayManipulate" BookletID="<%$ RouteValue:id %>" ReadOnly="false" />
+            <site:BookletPieceDisplayManipulate runat="server" ID="BookletPieceDisplayManipulate" BookletID="<%$ RouteValue:id %>" Mode="Edit" />
         </div>
 
         <%-- In this section user edit the data in tables appSchema.Note and appSchema.BorrowedBy --%>
@@ -143,17 +142,17 @@
             <div class="booklet-details-card-buttons small-12 medium-3 large-2 columns">
                 <ul class="button-list">
                     <li>
-                        <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("Booklets") %>' ImageUrl="~/Content/Icons/Cancel-icon-smaller.png" ToolTip="Avbryt" runat="server" Text="Avbryt" />
+                        <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletDetails", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Cancel-icon-smaller.png" ToolTip="Avbryt" runat="server" Text="Avbryt" />
                     </li>
                     <li>
-                        <asp:LinkButton ID="SaveLinkButton" CssClass="button" CommandName="Insert" ToolTip="Spara nothäfte" runat="server">
-                            <asp:Image ID="SaveImage" ImageUrl="~/Content/Icons/Save-icon-smaller.png" AlternateText="Spara nothäfte" runat="server" />
+                        <asp:LinkButton ID="SaveLinkButton" CssClass="button" CommandName="Update" ToolTip="Spara ändringar" runat="server">
+                            <asp:Image ID="SaveImage" ImageUrl="~/Content/Icons/Save-icon-smaller.png" AlternateText="Spara ändringar" runat="server" />
                         </asp:LinkButton>
                     </li>
                 </ul>
             </div>
         </div>
-    </InsertItemTemplate>
+    </EditItemTemplate>
 
     <%-- If no BookletContent where found in table appSchema.BookletContent. --%>
     <EmptyDataTemplate>

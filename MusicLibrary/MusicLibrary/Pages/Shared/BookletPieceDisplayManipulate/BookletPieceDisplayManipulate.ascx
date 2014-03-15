@@ -57,7 +57,7 @@
             <%-- This column is hidden in ReadOnly-mode. --%>
             <asp:PlaceHolder ID="EditColumnPlaceHolder" runat="server" Visible="true" OnPreRender="PlaceHolder_PreRender">
                 <td class="buttonColumn">
-                    <asp:LinkButton ID="DeleteLinkButton" CssClass="button" CommandName="Delete" runat="server" ToolTip="Radera">
+                    <asp:LinkButton ID="DeleteLinkButton" CssClass="button" CommandName="Delete" runat="server" ToolTip="Radera" CausesValidation="false">
                         <asp:Image ID="DeleteImage" runat="server" ImageUrl="~/Content/Icons/Delete-icon-smaller.png" AlternateText="Radera" />
                     </asp:LinkButton>
                 </td>
@@ -77,11 +77,12 @@
                     SelectMethod="PieceDropDownList_GetData"
                     DataTextField="PieceID"
                     SelectedValue="<%# BindItem.PieceID %>"
-                    runat="server" OnPreRender="PieceDropDownList_PreRender" />
+                    runat="server"
+                    OnPreRender="PieceDropDownList_PreRender" />
                 </label>
             </td>
             <td class="buttonColumn">
-                <asp:LinkButton ID="InsertLinkButton" CssClass="button" CommandName="Insert" runat="server" ToolTip="Spara">
+                <asp:LinkButton ID="InsertLinkButton" CssClass="button" CommandName="Insert" runat="server" ToolTip="Spara" CausesValidation="false">
                     <asp:Image ID="SaveImage" runat="server" ImageUrl="~/Content/Icons/Save-icon-smaller.png" AlternateText="Spara" />
                 </asp:LinkButton>
             </td>

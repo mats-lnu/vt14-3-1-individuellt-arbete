@@ -88,6 +88,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ett fel intfäffade när sidan skulle laddas..
+        /// </summary>
+        internal static string GeneralErrorSwedish {
+            get {
+                return ResourceManager.GetString("GeneralErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ett fel inträffade när stycket skulle läggas till i innehållslistan..
         /// </summary>
         internal static string InsertContentRecordErrorSwedish {
@@ -102,6 +111,33 @@ namespace Resources {
         internal static string InsertContentRecordSuccessSwedish {
             get {
                 return ResourceManager.GetString("InsertContentRecordSuccessSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade när det nya nothäftet sparades..
+        /// </summary>
+        internal static string InsertNewBookletErrorSwedish {
+            get {
+                return ResourceManager.GetString("InsertNewBookletErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Du måste ha minst ett stycke i innehållslistan..
+        /// </summary>
+        internal static string InsertNewBookletNoContentErrorSwedish {
+            get {
+                return ResourceManager.GetString("InsertNewBookletNoContentErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Det nya nothäftet har sparats i databasen..
+        /// </summary>
+        internal static string InsertNewBookletSuccessSwedish {
+            get {
+                return ResourceManager.GetString("InsertNewBookletSuccessSwedish", resourceCulture);
             }
         }
         

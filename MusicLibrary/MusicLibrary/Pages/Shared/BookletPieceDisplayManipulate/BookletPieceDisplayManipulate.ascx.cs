@@ -8,6 +8,8 @@ using System.Web.UI.WebControls;
 
 namespace MusicLibrary.Pages.Shared
 {
+    public enum Modes { ReadOnly, Edit };
+
     public partial class BookletPieceDisplayManipulate : System.Web.UI.UserControl
     {
         /// <summary>
@@ -18,7 +20,19 @@ namespace MusicLibrary.Pages.Shared
         /// <summary>
         /// Sets the Mode of the ListView. If ReadOnly, only the ItemTemplate is shown.
         /// </summary>
-        public bool ReadOnly { get; set; }
+        public Modes Mode { get; set; }
+
+        private List<BookletContent> TempBookletContentList
+        {
+            get
+            {
+                return Session["TempBookletContentList"] as List<BookletContent>;
+            }
+            set
+            {
+                Session["TempBookletContentList"] = value;
+            }
+        }
 
         /// <summary>
         /// Service-class in the application. Fetch and save data to the database.
@@ -37,7 +51,7 @@ namespace MusicLibrary.Pages.Shared
         /// </summary>
         public BookletPieceDisplayManipulate()
         {
-            ReadOnly = true;
+            Mode = Modes.ReadOnly;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -71,7 +85,10 @@ namespace MusicLibrary.Pages.Shared
             {
                 // Only the pieces that isn't already in the content list should be returned.
                 IEnumerable<Piece> allPieces = Service.GetPieces();
-                IEnumerable<BookletContent> bookletContentsInBooklet = Service.GetBookletContentsByBookletID(BookletID);
+                IEnumerable<BookletContent> bookletContentsInBooklet;
+
+                bookletContentsInBooklet = Service.GetBookletContentsByBookletID(BookletID);
+
                 List<int> li = bookletContentsInBooklet.Select(bc => bc.PieceID).ToList();
                 return (from p in allPieces where !(li).Contains(p.PieceID) select p).ToList();
             }
@@ -150,7 +167,6 @@ namespace MusicLibrary.Pages.Shared
             {
                 Service.DeleteBookletContent(BookletID, pieceID);
                 Session["SuccessMessage"] = Strings.DeleteContentRecordSuccessSwedish;
-
                 Response.RedirectToRoute("BookletEdit", new { id = BookletID });
                 Context.ApplicationInstance.CompleteRequest();
             }
@@ -175,7 +191,6 @@ namespace MusicLibrary.Pages.Shared
 
                     Service.SaveBookletContent(bookletContent);
                     Session["SuccessMessage"] = Strings.InsertContentRecordSuccessSwedish;
-
                     Response.RedirectToRoute("BookletEdit", new { id = BookletID });
                     Context.ApplicationInstance.CompleteRequest();
                 }
@@ -194,7 +209,7 @@ namespace MusicLibrary.Pages.Shared
         /// <param name="e"></param>
         protected void PlaceHolder_PreRender(object sender, EventArgs e)
         {
-            if (ReadOnly)
+            if (Mode == Modes.ReadOnly)
             {
                 PlaceHolder item = (PlaceHolder)sender;
                 item.Visible = false;
@@ -208,7 +223,7 @@ namespace MusicLibrary.Pages.Shared
         /// <param name="e"></param>
         protected void BookletPiecesListView_PreRender(object sender, EventArgs e)
         {
-            if (ReadOnly)
+            if (Mode == Modes.ReadOnly)
             {
                 BookletPiecesListView.InsertItemPosition = InsertItemPosition.None;
             }
@@ -221,14 +236,21 @@ namespace MusicLibrary.Pages.Shared
         /// <param name="e"></param>
         public void PieceDropDownList_PreRender(object sender, EventArgs e)
         {
-            DropDownList dp = (DropDownList)sender;
-            IEnumerable<Piece> pieces = Service.GetPieces();
-
-            // For the moment the values for composer, scale and genre are static.
-            for (int i = 0; i < dp.Items.Count; i += 1)
+            try
             {
-                Piece piece = pieces.FirstOrDefault(p => p.PieceID.ToString() == dp.Items[i].Text);
-                dp.Items[i].Text = String.Format("{0}, {1}, {2}, {3}, {4}", "Kompositör", piece.Name, "Tonart", piece.CatalogueNumber, "Genre");
+                DropDownList dp = (DropDownList)sender;
+                IEnumerable<Piece> pieces = Service.GetPieces();
+
+                // For the moment the values for composer, scale and genre are static.
+                for (int i = 0; i < dp.Items.Count; i += 1)
+                {
+                    Piece piece = pieces.FirstOrDefault(p => p.PieceID.ToString() == dp.Items[i].Text);
+                    dp.Items[i].Text = String.Format("{0}, {1}, {2}, {3}, {4}", "Kompositör", piece.Name, "Tonart", piece.CatalogueNumber, "Genre");
+                }
+            }
+            catch
+            {
+                Page.ModelState.AddModelError(String.Empty, Strings.GeneralErrorSwedish);
             }
         }
     }
