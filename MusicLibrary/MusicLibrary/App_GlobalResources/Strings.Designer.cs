@@ -61,6 +61,33 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nothäftet med ID {0} finns inte i databasen..
+        /// </summary>
+        internal static string BookletDontExistsErrorSwedish {
+            get {
+                return ResourceManager.GetString("BookletDontExistsErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ett fel inträffade när nothäftet skulle raderas från databasen..
+        /// </summary>
+        internal static string DeleteBookletErrorSwedish {
+            get {
+                return ResourceManager.GetString("DeleteBookletErrorSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nothäftet har raderats permanent från databasen..
+        /// </summary>
+        internal static string DeleteBookletSuccessSwedish {
+            get {
+                return ResourceManager.GetString("DeleteBookletSuccessSwedish", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ett fel inträffade när stycket skulle tas bort från innehållslistan..
         /// </summary>
         internal static string DeleteContentRecordErrorSwedish {

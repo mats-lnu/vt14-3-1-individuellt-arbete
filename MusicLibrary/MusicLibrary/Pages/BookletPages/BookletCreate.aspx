@@ -187,7 +187,7 @@
                         <div class="booklet-details-card-buttons small-12 medium-3 large-2 columns">
                             <ul class="button-list">
                                 <li>
-                                    <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("Booklets") %>' ImageUrl="~/Content/Icons/Cancel-icon-smaller.png" ToolTip="Avbryt" runat="server" Text="Avbryt" />
+                                    <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%$ RouteUrl:routename=Booklets %>' ImageUrl="~/Content/Icons/Back-icon-smaller.png" ToolTip="Avbryt" runat="server" Text="Avbryt" />
                                 </li>
                                 <li>
                                     <asp:LinkButton ID="SaveLinkButton" CssClass="button" CommandName="Insert" ToolTip="Spara ändringar" runat="server">

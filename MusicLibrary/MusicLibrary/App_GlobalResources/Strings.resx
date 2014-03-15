@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BookletDontExistsErrorSwedish" xml:space="preserve">
+    <value>Nothäftet med ID {0} finns inte i databasen.</value>
+  </data>
+  <data name="DeleteBookletErrorSwedish" xml:space="preserve">
+    <value>Ett fel inträffade när nothäftet skulle raderas från databasen.</value>
+  </data>
+  <data name="DeleteBookletSuccessSwedish" xml:space="preserve">
+    <value>Nothäftet har raderats permanent från databasen.</value>
+  </data>
   <data name="DeleteContentRecordErrorSwedish" xml:space="preserve">
     <value>Ett fel inträffade när stycket skulle tas bort från innehållslistan.</value>
   </data>

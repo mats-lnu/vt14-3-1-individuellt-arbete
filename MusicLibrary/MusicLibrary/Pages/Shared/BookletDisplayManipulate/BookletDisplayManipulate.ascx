@@ -143,7 +143,7 @@
             <div class="booklet-details-card-buttons small-12 medium-3 large-2 columns">
                 <ul class="button-list">
                     <li>
-                        <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletDetails", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Cancel-icon-smaller.png" ToolTip="Avbryt" runat="server" Text="Avbryt" />
+                        <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletDetails", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Back-icon-smaller.png" ToolTip="Tillbaka" runat="server" Text="Tillbaka" />
                     </li>
                     <li>
                         <asp:LinkButton ID="SaveLinkButton" CssClass="button" CommandName="Update" ToolTip="Spara ändringar" runat="server">
@@ -157,7 +157,7 @@
 
     <%-- If no BookletContent where found in table appSchema.BookletContent. --%>
     <EmptyDataTemplate>
-        <p>Inget nothäfte hittades.</p>
+        <asp:HyperLink ID="BackHyperlink" CssClass="button" NavigateUrl='<%$ RouteUrl:routename=Booklets %>' ImageUrl="~/Content/Icons/Back-icon-smaller.png" ToolTip="Tillbaka till listan" runat="server" Text="Tillbaka till listan" />
     </EmptyDataTemplate>
 
 </asp:FormView>

@@ -22,18 +22,6 @@ namespace MusicLibrary.Pages.Shared
         /// </summary>
         public Modes Mode { get; set; }
 
-        private List<BookletContent> TempBookletContentList
-        {
-            get
-            {
-                return Session["TempBookletContentList"] as List<BookletContent>;
-            }
-            set
-            {
-                Session["TempBookletContentList"] = value;
-            }
-        }
-
         /// <summary>
         /// Service-class in the application. Fetch and save data to the database.
         /// </summary>
@@ -111,7 +99,6 @@ namespace MusicLibrary.Pages.Shared
             try
             {
                 BookletContent bc = e.Item.DataItem as BookletContent;
-                // TODO: Cahca detta.
                 IEnumerable<Piece> pieces = Service.GetPieces();
                 Piece piece = pieces.FirstOrDefault(p => p.PieceID == bc.PieceID);
 

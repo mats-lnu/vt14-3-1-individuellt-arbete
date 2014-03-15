@@ -55,6 +55,10 @@ span.error {
     margin-bottom: 0;
 }
 
+.no-data-text {
+    font-size: 0.8rem;
+}
+
 /* Listing booklets */
 .booklet-card {
     padding: 10px !important;
@@ -76,7 +80,6 @@ span.error {
 .booklet-details-card {
     padding: 10px 10px 20px !important;
     margin: 5px !important;
-
     border: 1px solid #8c8979;
     background-color: #fff;
     position: relative;
@@ -145,11 +148,11 @@ span.error {
         height: 30px;
     }
 
-    .booklet-details-card-buttons .button-list li:first-child {
-        margin: 0 8px 0 5px;
-    }
+        .booklet-details-card-buttons .button-list li:first-child {
+            margin: 0 8px 0 5px;
+        }
 
-/* Booklet details insert/edit */
+/* Booklet details/insert/edit/delete */
 input[type="text"], textarea, select {
     font-weight: normal;
     font-size: 0.8rem;
@@ -164,4 +167,33 @@ a[title="Spara"] {
 a[title="Radera"] {
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+/* Booklet delete */
+
+.booklet-delete-card {
+    padding: 10px !important;
+    margin: 5px !important;
+    border: 1px solid #8c8979;
+    background-color: #fff;
+    position: relative;
+}
+
+.booklet-delete-card p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+span.title {
+    font-weight: bold;
+}
+
+.booklet-delete-buttons {
+    margin-top: 10px;
+}
+
+.booklet-delete-buttons a {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    margin: 0 5px 0 0;
 }

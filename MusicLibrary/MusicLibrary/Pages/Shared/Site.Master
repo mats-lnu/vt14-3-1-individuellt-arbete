@@ -21,13 +21,10 @@
                     <nav>
                         <ul>
                             <li>
-                                <asp:HyperLink ID="HyperLink1" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Gå till Musikstycken" runat="server">Musikstycken</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink2" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Gå till Nothäften" runat="server" Text="Nothäften" />
                             </li>
                             <li>
-                                <asp:HyperLink ID="HyperLink2" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Gå till Nothäften" runat="server">Nothäften</asp:HyperLink>
-                            </li>
-                            <li>
-                                <asp:HyperLink ID="HyperLink3" NavigateUrl="<%$ RouteUrl:routename=BookletCreate %>" ToolTip="Lägg till nothäfte" runat="server">Lägg till nothäfte</asp:HyperLink>
+                                <asp:HyperLink ID="HyperLink3" NavigateUrl="<%$ RouteUrl:routename=BookletCreate %>" ToolTip="Skapa nytt nothäfte" runat="server" Text="Lägg till nothäfte" />
                             </li>
                         </ul>
                     </nav>

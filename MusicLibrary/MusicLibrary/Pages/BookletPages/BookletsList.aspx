@@ -55,12 +55,10 @@
                     <div class="booklet-card-buttons small-12 medium-3 large-2 columns">
                         <ul class="button-list">
                             <li>
-                                <asp:LinkButton ID="LinkButton1" CssClass="button" ToolTip="Radera nothäftet" runat="server">
-                                    <asp:Image ID="Image1" ImageUrl="~/Content/Icons/Delete-icon-smaller.png" AlternateText="Radera nothäftet" runat="server" />
-                                </asp:LinkButton>
+                                <asp:HyperLink ID="DeleteHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletDelete", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Delete-icon-smaller.png" ToolTip="Radera nothäftet" runat="server" Text="Radera nothäftet" />
                             </li>
                             <li>
-                                <asp:HyperLink ID="ImageHyperlink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletDetails", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Details-icon-smaller.png" ToolTip="Visa Detaljer" runat="server" Text="Visa detaljer" />
+                                <asp:HyperLink ID="DetailsHyperlink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletDetails", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Details-icon-smaller.png" ToolTip="Visa Detaljer" runat="server" Text="Visa detaljer" />
                             </li>
                         </ul>
                     </div>

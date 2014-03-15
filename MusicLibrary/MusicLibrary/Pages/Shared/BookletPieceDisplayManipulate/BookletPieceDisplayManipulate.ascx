@@ -91,7 +91,7 @@
 
     <%-- If no BookletContent existed from the Booklet. --%>
     <EmptyDataTemplate>
-        <p>Nothäftet har inget innehåll.</p>
+        <p class="no-data-text">Nothäftet har inget innehåll.</p>
     </EmptyDataTemplate>
 
 </asp:ListView>

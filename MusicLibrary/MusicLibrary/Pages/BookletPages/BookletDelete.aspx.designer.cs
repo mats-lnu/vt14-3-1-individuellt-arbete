@@ -7,54 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MusicLibrary.Pages.Shared {
+namespace MusicLibrary.Pages.BookletPages {
     
     
-    public partial class Site {
+    public partial class BookletDelete {
         
         /// <summary>
-        /// form1 control.
+        /// BookletEditValidationSummary control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.ValidationSummary BookletEditValidationSummary;
         
         /// <summary>
-        /// ContentPlaceHolderHeader control.
+        /// ConfirmPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderHeader;
+        protected global::System.Web.UI.WebControls.PlaceHolder ConfirmPlaceHolder;
         
         /// <summary>
-        /// HyperLink2 control.
+        /// ConfirmLiteral control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink2;
+        protected global::System.Web.UI.WebControls.Literal ConfirmLiteral;
         
         /// <summary>
-        /// HyperLink3 control.
+        /// YesLinkButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink HyperLink3;
+        protected global::System.Web.UI.WebControls.LinkButton YesLinkButton;
         
         /// <summary>
-        /// ContentPlaceHolderMain control.
+        /// NoHyperLink control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderMain;
+        protected global::System.Web.UI.WebControls.HyperLink NoHyperLink;
+        
+        /// <summary>
+        /// BackPlaceHolder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder BackPlaceHolder;
+        
+        /// <summary>
+        /// BackHyperlink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink BackHyperlink;
     }
 }

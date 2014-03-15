@@ -79,23 +79,18 @@
   <ItemGroup>
     <Content Include="Content\Background\Background-texture.png" />
     <Content Include="Content\foundation.css" />
-    <Content Include="Content\Icons\Back-icon-small.png" />
     <Content Include="Content\Icons\Back-icon-smaller.png" />
-    <Content Include="Content\Icons\Cancel-icon-small.png" />
     <Content Include="Content\Icons\Cancel-icon-smaller.png" />
-    <Content Include="Content\Icons\Delete-icon-small.png" />
     <Content Include="Content\Icons\Delete-icon-smaller.png" />
-    <Content Include="Content\Icons\Details-icon-small.png" />
     <Content Include="Content\Icons\Details-icon-smaller.png" />
-    <Content Include="Content\Icons\Edit-icon-small.png" />
     <Content Include="Content\Icons\Edit-icon-smaller.png" />
-    <Content Include="Content\Icons\Save-icon-small.png" />
     <Content Include="Content\Icons\Save-icon-smaller.png" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\SiteStyle.css" />
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <Content Include="Pages\BookletPages\BookletCreate.aspx" />
+    <Content Include="Pages\BookletPages\BookletDelete.aspx" />
     <Content Include="Pages\BookletPages\BookletDetails.aspx" />
     <Content Include="Pages\BookletPages\BookletEdit.aspx" />
     <Content Include="Pages\BookletPages\BookletsList.aspx" />
@@ -160,6 +155,13 @@
     </Compile>
     <Compile Include="Pages\BookletPages\BookletCreate.aspx.designer.cs">
       <DependentUpon>BookletCreate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\BookletPages\BookletDelete.aspx.cs">
+      <DependentUpon>BookletDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\BookletPages\BookletDelete.aspx.designer.cs">
+      <DependentUpon>BookletDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\BookletPages\BookletDetails.aspx.cs">
       <DependentUpon>BookletDetails.aspx</DependentUpon>

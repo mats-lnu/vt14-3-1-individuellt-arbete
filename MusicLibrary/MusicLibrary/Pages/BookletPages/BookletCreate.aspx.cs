@@ -150,7 +150,6 @@ namespace MusicLibrary.Pages.BookletPages
             try
             {
                 BookletContent bc = e.Item.DataItem as BookletContent;
-                // TODO: Cahca detta.
                 IEnumerable<Piece> pieces = Service.GetPieces();
                 Piece piece = pieces.FirstOrDefault(p => p.PieceID == bc.PieceID);
 
@@ -274,7 +273,7 @@ namespace MusicLibrary.Pages.BookletPages
                     TempBookletContentList.Add(bookletContent);
                     Session["SuccessMessage"] = Strings.InsertContentRecordSuccessSwedish;
 
-                    Response.Redirect(GetRouteUrl("BookletCreate"));
+                    Response.Redirect(GetRouteUrl("BookletCreate", null));
                     Context.ApplicationInstance.CompleteRequest();
                 }
                 catch
@@ -295,7 +294,7 @@ namespace MusicLibrary.Pages.BookletPages
                 TempBookletContentList.RemoveAll(p => p.PieceID == pieceID);
                 Session["SuccessMessage"] = Strings.DeleteContentRecordSuccessSwedish;
 
-                Response.Redirect(GetRouteUrl("BookletCreate"));
+                Response.Redirect(GetRouteUrl("BookletCreate", null));
                 Context.ApplicationInstance.CompleteRequest();
             }
             catch
