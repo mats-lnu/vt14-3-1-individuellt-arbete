@@ -18,6 +18,9 @@
                 </div>
             </asp:PlaceHolder>
 
+            <%-- Validation Summary for booklet edit --%>
+            <asp:ValidationSummary ID="BookletEditValidationSummary" data-alert="data-alert" CssClass="alert-box error" runat="server" ShowModelStateErrors="true" DisplayMode="List" />
+
             <asp:FormView ID="BookletEditFormView" runat="server"
                 ItemType="MusicLibrary.Model.BLL.Booklet"
                 DataKeyNames="BookletID"
