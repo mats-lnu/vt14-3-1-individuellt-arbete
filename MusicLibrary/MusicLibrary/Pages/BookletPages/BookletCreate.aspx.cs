@@ -39,6 +39,34 @@ namespace MusicLibrary.Pages.BookletPages
             }
         }
 
+        private void CleanSession() 
+        {
+            if (Session["TempBookletContentList"] != null)
+            {
+                Session.Remove("TempBookletContentList");
+            }
+            if (Session["name"] != null)
+            {
+                Session.Remove("name");
+            }
+            if (Session["year"] != null)
+            {
+                Session.Remove("year");
+            }
+            if (Session["place"] != null)
+            {
+                Session.Remove("place");
+            }
+            if (Session["notes"] != null)
+            {
+                Session.Remove("notes");
+            }
+            if (Session["borrowedTo"] != null)
+            {
+                Session.Remove("borrowedTo");
+            }
+        }
+
         /// <summary>
         /// Server validation method.
         /// </summary>
@@ -232,7 +260,7 @@ namespace MusicLibrary.Pages.BookletPages
                             Service.SaveBookletContent(bookletContent[i]);
                         }
                         // If success, a success-message is shown.
-                        Session.Remove("TempBookletContentList");
+                        CleanSession();
                         Session["SuccessMessage"] = String.Format(Strings.InsertNewBookletSuccessSwedish);
                         Response.RedirectToRoute("BookletDetails", new { id = booklet.BookletID });
                         Context.ApplicationInstance.CompleteRequest();
@@ -384,6 +412,18 @@ namespace MusicLibrary.Pages.BookletPages
                     Value = "1"
                 });
             }
+        }
+
+        /// <summary>
+        /// Activates if user cancel without saving the new booklet.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void CancelLinkButton_Click(object sender, EventArgs e)
+        {
+            CleanSession();
+            Response.RedirectToRoute("Booklets", null);
+            Context.ApplicationInstance.CompleteRequest();
         }
     }
 }

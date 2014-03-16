@@ -21,7 +21,6 @@
             <%-- Validation Summary for booklet edit --%>
             <asp:ValidationSummary ID="BookletEditValidationSummary" data-alert="data-alert" CssClass="alert-box error" runat="server" ShowModelStateErrors="true" DisplayMode="List" />
 
-            <%-- User Control for editing booklet --%>
             <asp:FormView ID="BookletCreateFormView" runat="server"
                 ItemType="MusicLibrary.Model.BLL.Booklet"
                 DataKeyNames="BookletID"
@@ -72,6 +71,7 @@
                     <%-- I this section user edit the data in table appShema.BookletContent. --%>
                     <div class="small-12 columns booklet-details-card-pieces">
                         <p><span class="custom-label">Innehåll:</span></p>
+
                         <asp:ListView ID="BookletPiecesListView"
                             runat="server"
                             DataKeyNames="PieceID, BookletID"
@@ -187,7 +187,9 @@
                         <div class="booklet-details-card-buttons small-12 medium-3 large-2 columns">
                             <ul class="button-list">
                                 <li>
-                                    <asp:HyperLink ID="CancelHyperLink" CssClass="button" NavigateUrl='<%$ RouteUrl:routename=Booklets %>' ImageUrl="~/Content/Icons/Back-icon-smaller.png" ToolTip="Avbryt" runat="server" Text="Avbryt" />
+                                    <asp:LinkButton ID="CancelLinkButton" CssClass="button" ToolTip="Tillbaka" runat="server" OnClick="CancelLinkButton_Click">
+                                        <asp:Image ID="CancelImage" ImageUrl="~/Content/Icons/Back-icon-smaller.png" AlternateText="Tillbaka" runat="server" />
+                                    </asp:LinkButton>
                                 </li>
                                 <li>
                                     <asp:LinkButton ID="SaveLinkButton" CssClass="button" CommandName="Insert" ToolTip="Spara ändringar" runat="server">

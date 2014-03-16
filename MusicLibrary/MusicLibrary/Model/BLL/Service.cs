@@ -48,13 +48,12 @@ namespace MusicLibrary.Model.BLL
         }
 
         /// <summary>
-        /// Delete a record from table appSchema.BookletContent.
+        /// Delete records from table appSchema.BookletContent.
         /// </summary>
-        /// <param name="bookletID">Part of the Primary Key in the selected record.</param>
-        /// <param name="pieceID">Part of the Primary Key in the selected record.</param>
-        public void DeleteBookletContent(int bookletID, int pieceID)
+        /// <param name="bookletID">Part of the Primary Key in the selected records.</param>
+        public void DeleteBookletContent(int bookletID)
         {
-            BookletContentDAL.DeleteBookletContentByIDs(bookletID, pieceID);
+            BookletContentDAL.DeleteBookletContentsByBookletID(bookletID);
         }
 
         /// <summary>
@@ -95,17 +94,6 @@ namespace MusicLibrary.Model.BLL
         public IEnumerable<Booklet> GetBooklets(int startRowIndex, int maximumRows, out int totalRowCount)
         {
             return BookletDAL.GetBooklets(startRowIndex, maximumRows, out totalRowCount);
-        }
-
-        /// <summary>
-        /// Select and return a record from table appSchema.BookletContent.
-        /// </summary>
-        /// <param name="bookletID">Part of the Primary Key in the selected record.</param>
-        /// <param name="pieceID">Part of the Primary Key in the selected record.</param>
-        /// <returns>An instance of MusicLibrary.Model.BLL.BookletContent.</returns>
-        public BookletContent GetBookletContent(int bookletID, int pieceID)
-        {
-            return BookletContentDAL.GetBookletContentByIDs(bookletID, pieceID);
         }
 
         /// <summary>

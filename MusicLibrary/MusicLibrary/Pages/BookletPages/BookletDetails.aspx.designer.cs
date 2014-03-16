@@ -40,12 +40,12 @@ namespace MusicLibrary.Pages.BookletPages {
         protected global::System.Web.UI.WebControls.ValidationSummary BookletEditValidationSummary;
         
         /// <summary>
-        /// BookletDisplayManipulate control.
+        /// BookletDetailFormView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::MusicLibrary.Pages.Shared.BookletDisplayManipulate BookletDisplayManipulate;
+        protected global::System.Web.UI.WebControls.FormView BookletDetailFormView;
     }
 }

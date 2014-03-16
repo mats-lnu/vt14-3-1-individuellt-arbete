@@ -13,20 +13,18 @@ namespace MusicLibrary.Model.DAL
     public class BookletContentDAL : DALBase
     {
         /// <summary>
-        /// Delete a record from table appSchema.BookletContent.
+        /// Delete a records from table appSchema.BookletContent.
         /// </summary>
-        /// <param name="bookletID">Part of the Primary Key in the deleted record.</param>
-        /// <param name="pieceID">Part of the Primary Key in the deleted record.</param>
-        public void DeleteBookletContentByIDs(int bookletID, int pieceID)
+        /// <param name="bookletID">Part of the Primary Key in the deleted records.</param>
+        public void DeleteBookletContentsByBookletID(int bookletID)
         {
             using (var con = CreateConnection())
             {
                 try
                 {
-                    var cmd = new SqlCommand("appSchema.usp_DeleteBookletContentByIDs", con);
+                    var cmd = new SqlCommand("appSchema.usp_DeleteBookletContentsByBookletID", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@BookletID", SqlDbType.Int, 4).Value = bookletID;
-                    cmd.Parameters.Add("@PieceID", SqlDbType.Int, 4).Value = pieceID;
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -34,49 +32,6 @@ namespace MusicLibrary.Model.DAL
                 catch
                 {
                     throw new ApplicationException(Strings.DeleteRecordError);
-                }
-            }
-        }
-
-        /// <summary>
-        /// Select and return a record from table appSchema.BookletContent.
-        /// </summary>
-        /// <param name="bookletID">Part of the Primary Key in the selected record.</param>
-        /// <param name="pieceID">Part of the Primary Key in the selected record.</param>
-        /// <returns>An instance of MusicLibrary.Model.BLL.BookletContent.</returns>
-        public BookletContent GetBookletContentByIDs(int bookletID, int pieceID)
-        {
-            using (var con = CreateConnection())
-            {
-                try
-                {
-                    var cmd = new SqlCommand("appSchema.usp_GetBookletContentByIDs", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@BookletID", SqlDbType.Int, 4).Value = bookletID;
-                    cmd.Parameters.Add("@PieceID", SqlDbType.Int, 4).Value = pieceID;
-
-                    con.Open();
-
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        var bookletIDIndex = reader.GetOrdinal("BookletID");
-                        var pieceIDIndex = reader.GetOrdinal("PieceID");
-
-                        if (reader.Read())
-                        {
-                            return new BookletContent
-                            {
-                                BookletID = reader.GetInt32(bookletIDIndex),
-                                PieceID = reader.GetInt32(pieceIDIndex)
-                            };
-                        }
-
-                        return null;
-                    }
-                }
-                catch
-                {
-                    throw new ApplicationException(Strings.SelectRecordError);
                 }
             }
         }

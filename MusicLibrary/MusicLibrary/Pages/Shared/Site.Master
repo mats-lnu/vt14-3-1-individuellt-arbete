@@ -21,10 +21,10 @@
                     <nav>
                         <ul>
                             <li>
-                                <asp:HyperLink ID="HyperLink2" NavigateUrl="<%$ RouteUrl:routename=Booklets %>" ToolTip="Gå till Nothäften" runat="server" Text="Nothäften" />
+                                <asp:LinkButton ID="BookletsLinkButton" runat="server" ToolTip="Gå till nothäftelistan" Text="Nothäften" OnClick="BookletsLinkButton_Click" />
                             </li>
                             <li>
-                                <asp:HyperLink ID="HyperLink3" NavigateUrl="<%$ RouteUrl:routename=BookletCreate %>" ToolTip="Skapa nytt nothäfte" runat="server" Text="Lägg till nothäfte" />
+                                <asp:LinkButton ID="CreateBookletLinkButton" runat="server" Text="Lägg till nothäfte" ToolTip="Skapa nytt nothäfte" OnClick="CreateBookletLinkButton_Click" />
                             </li>
                         </ul>
                     </nav>

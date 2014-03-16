@@ -10,7 +10,8 @@
         ItemType="MusicLibrary.Model.BLL.Booklet"
         SelectMethod="ListViewBooklets_GetData"
         DataKeyNames="BookletID"
-        OnItemDataBound="ListViewBooklets_ItemDataBound">
+        OnItemDataBound="ListViewBooklets_ItemDataBound"
+        OnPagePropertiesChanging="ListViewBooklets_PagePropertiesChanging">
 
         <LayoutTemplate>
             <%-- Success message --%>
@@ -28,6 +29,33 @@
 
             <%-- PlaceHolder for ItemTempate. --%>
             <asp:PlaceHolder ID="itemPlaceholder" runat="server" />
+
+            <%-- Paging --%>
+            <asp:DataPager ID="BookletsDataPager" runat="server" PageSize="5">
+                <Fields>
+                    <asp:NextPreviousPagerField 
+                        ShowFirstPageButton="true" 
+                        ShowLastPageButton="false" 
+                        ShowNextPageButton="false" 
+                        ShowPreviousPageButton="false" 
+                        FirstPageText="<<" 
+                        ButtonType="Link" 
+                        ButtonCssClass="button" />
+                    <asp:NumericPagerField ButtonType="Image" 
+                        NumericButtonCssClass="button" 
+                        NextPreviousButtonCssClass="button" 
+                        PreviousPageText="<" 
+                        NextPageText=">" />
+                    <asp:NextPreviousPagerField 
+                        ShowFirstPageButton="false" 
+                        ShowLastPageButton="true" 
+                        ShowNextPageButton="false" 
+                        ShowPreviousPageButton="false" 
+                        LastPageText=">>"
+                        ButtonType="Link" 
+                        ButtonCssClass="button" />
+                </Fields>
+            </asp:DataPager>
         </LayoutTemplate>
 
         <ItemTemplate>

@@ -2,8 +2,6 @@
 using Resources;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -11,6 +9,18 @@ namespace MusicLibrary.Pages.BookletPages
 {
     public partial class BookletsList : System.Web.UI.Page
     {
+        /// <summary>
+        /// Service-class in the application. Used to fetch and save content to the database.
+        /// </summary>
+        private Service _service;
+        private Service Service
+        {
+            get
+            {
+                return _service ?? (_service = new Service());
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["SuccessMessage"] != null)
@@ -24,21 +34,23 @@ namespace MusicLibrary.Pages.BookletPages
             }
         }
 
-        // The return type can be changed to IEnumerable, however to support
-        // paging and sorting, the following parameters must be added:
-        //     int maximumRows
-        //     int startRowIndex
-        //     out int totalRowCount
-        //     string sortByExpression
-        public IEnumerable<MusicLibrary.Model.BLL.Booklet> ListViewBooklets_GetData()
+        /// <summary>
+        /// SelectMethod for ListViewBooklets.
+        /// </summary>
+        /// <param name="maximumRows"></param>
+        /// <param name="startRowIndex"></param>
+        /// <param name="totalRowCount"></param>
+        /// <returns>A collection of Booklet-objects.</returns>
+        public IEnumerable<Booklet> ListViewBooklets_GetData(int maximumRows, int startRowIndex, out int totalRowCount)
         {
             try
             {
-                return new Service().GetBooklets();
+                return Service.GetBooklets(startRowIndex, maximumRows, out totalRowCount);
             }
             catch
             {
                 Page.ModelState.AddModelError(String.Empty, Strings.SelectBookletsErrorSwedish);
+                totalRowCount = 0;
                 return null;
             }
         }
@@ -61,6 +73,16 @@ namespace MusicLibrary.Pages.BookletPages
             {
                 literal.Text = "<span class=\"defaultValue\">Ingen hyllplats</span>";
             }
+        }
+
+        /// <summary>
+        /// When user change page, this method update the DataPager properties.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ListViewBooklets_PagePropertiesChanging(object sender, PagePropertiesChangingEventArgs e)
+        {
+            ((DataPager)ListViewBooklets.FindControl("BookletsDataPager")).SetPageProperties(e.StartRowIndex, e.MaximumRows, false);
         }
     }
 }

@@ -94,8 +94,6 @@
     <Content Include="Pages\BookletPages\BookletDetails.aspx" />
     <Content Include="Pages\BookletPages\BookletEdit.aspx" />
     <Content Include="Pages\BookletPages\BookletsList.aspx" />
-    <Content Include="Pages\Shared\BookletDisplayManipulate\BookletDisplayManipulate.ascx" />
-    <Content Include="Pages\Shared\BookletPieceDisplayManipulate\BookletPieceDisplayManipulate.ascx" />
     <Content Include="Pages\Shared\Site.Master" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\foundation.min.js" />
@@ -183,20 +181,6 @@
     </Compile>
     <Compile Include="Pages\BookletPages\BookletsList.aspx.designer.cs">
       <DependentUpon>BookletsList.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Shared\BookletDisplayManipulate\BookletDisplayManipulate.ascx.cs">
-      <DependentUpon>BookletDisplayManipulate.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Shared\BookletDisplayManipulate\BookletDisplayManipulate.ascx.designer.cs">
-      <DependentUpon>BookletDisplayManipulate.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Shared\BookletPieceDisplayManipulate\BookletPieceDisplayManipulate.ascx.cs">
-      <DependentUpon>BookletPieceDisplayManipulate.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Pages\Shared\BookletPieceDisplayManipulate\BookletPieceDisplayManipulate.ascx.designer.cs">
-      <DependentUpon>BookletPieceDisplayManipulate.ascx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Shared\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
