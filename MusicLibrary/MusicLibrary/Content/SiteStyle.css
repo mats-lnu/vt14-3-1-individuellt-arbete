@@ -179,10 +179,10 @@ a[title="Radera"] {
     position: relative;
 }
 
-.booklet-delete-card p {
-    font-size: 0.8rem;
-    margin-bottom: 0;
-}
+    .booklet-delete-card p {
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
 
 span.title {
     font-weight: bold;
@@ -192,8 +192,40 @@ span.title {
     margin-top: 10px;
 }
 
-.booklet-delete-buttons a {
-    font-size: 0.8rem;
-    padding: 5px 10px;
-    margin: 0 5px 0 0;
+    .booklet-delete-buttons a {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        margin: 0 5px 0 0;
+    }
+
+/* Error-page */
+
+.error-card {
+    padding: 10px !important;
+    margin: 5px !important;
+    border: 1px solid #8c8979;
+    background-color: #fff;
+    position: relative;
 }
+
+    .error-card p {
+        font-size: 0.8rem;
+    }
+
+    .error-card a {
+        margin: 0;
+    }
+
+/* Start-page */
+
+.startpage-card {
+    padding: 10px !important;
+    margin: 5px !important;
+    border: 1px solid #8c8979;
+    background-color: #fff;
+    position: relative;
+}
+
+    .startpage-card p {
+        font-size: 0.8rem;
+    }

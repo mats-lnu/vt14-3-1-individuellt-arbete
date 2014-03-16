@@ -21,6 +21,9 @@
                     <nav>
                         <ul>
                             <li>
+                                <asp:LinkButton ID="StartpageLinkButton" runat="server" ToolTip="Gå till Startsidan" Text="Startsida" OnClick="StartpageLinkButton_Click" />
+                            </li>
+                            <li>
                                 <asp:LinkButton ID="BookletsLinkButton" runat="server" ToolTip="Gå till nothäftelistan" Text="Nothäften" OnClick="BookletsLinkButton_Click" />
                             </li>
                             <li>

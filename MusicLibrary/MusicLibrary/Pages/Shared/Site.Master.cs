@@ -42,6 +42,11 @@ namespace MusicLibrary.Pages.Shared
 
         }
 
+        /// <summary>
+        /// On click on "Skapa nytt nothäfte."
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void CreateBookletLinkButton_Click(object sender, EventArgs e)
         {
             CleanSession();
@@ -49,10 +54,27 @@ namespace MusicLibrary.Pages.Shared
             Context.ApplicationInstance.CompleteRequest();
         }
 
+        /// <summary>
+        /// On click on "Nothäften".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void BookletsLinkButton_Click(object sender, EventArgs e)
         {
             CleanSession();
             Response.RedirectToRoute("Booklets", null);
+            Context.ApplicationInstance.CompleteRequest();
+        }
+
+        /// <summary>
+        /// On click on "Startsida".
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void StartpageLinkButton_Click(object sender, EventArgs e)
+        {
+            CleanSession();
+            Response.RedirectToRoute("Default", null);
             Context.ApplicationInstance.CompleteRequest();
         }
     }

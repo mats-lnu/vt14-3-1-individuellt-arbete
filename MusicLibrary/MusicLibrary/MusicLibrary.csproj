@@ -94,8 +94,11 @@
     <Content Include="Pages\BookletPages\BookletDetails.aspx" />
     <Content Include="Pages\BookletPages\BookletEdit.aspx" />
     <Content Include="Pages\BookletPages\BookletsList.aspx" />
+    <Content Include="Pages\Shared\Error.aspx" />
+    <Content Include="Pages\Shared\Error404.aspx" />
     <Content Include="Pages\Shared\Site.Master" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Pages\Shared\Start.aspx" />
     <Content Include="Scripts\foundation.min.js" />
     <Content Include="Scripts\foundation\foundation.abide.js" />
     <Content Include="Scripts\foundation\foundation.accordion.js" />
@@ -182,12 +185,33 @@
     <Compile Include="Pages\BookletPages\BookletsList.aspx.designer.cs">
       <DependentUpon>BookletsList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Shared\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shared\Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Shared\Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Pages\Shared\Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Shared\Start.aspx.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Shared\Start.aspx.designer.cs">
+      <DependentUpon>Start.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
