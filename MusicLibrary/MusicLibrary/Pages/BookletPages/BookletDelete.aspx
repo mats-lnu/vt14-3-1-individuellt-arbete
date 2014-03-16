@@ -16,8 +16,8 @@
                 <p>Nothäftet kommer att raderas permanent från databasen.</p>
 
                 <div class="booklet-delete-buttons">
-                    <asp:LinkButton ID="YesLinkButton" CssClass="button" runat="server" Text="Ja" OnCommand="YesLinkButton_Command" CommandArgument='<%$ RouteValue:id %>' />
-                    <asp:HyperLink ID="NoHyperLink" CssClass="button" runat="server" NavigateUrl='<%$ RouteUrl:routename=Booklets %>' Text="Avbryt" />
+                    <asp:LinkButton ID="YesLinkButton" CssClass="button tiny" runat="server" Text="Ja" OnCommand="YesLinkButton_Command" CommandArgument='<%$ RouteValue:id %>' />
+                    <asp:HyperLink ID="NoHyperLink" CssClass="button tiny" runat="server" NavigateUrl='<%$ RouteUrl:routename=Booklets %>' Text="Avbryt" />
                 </div>
             </asp:PlaceHolder>
             <asp:PlaceHolder ID="BackPlaceHolder" runat="server" Visible="false">
@@ -25,4 +25,7 @@
             </asp:PlaceHolder>
         </div>
     </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
 </asp:Content>

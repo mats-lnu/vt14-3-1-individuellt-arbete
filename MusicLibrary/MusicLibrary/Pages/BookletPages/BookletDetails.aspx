@@ -112,7 +112,7 @@
                     <%-- This section displays info from tables appSchema.Note and appSchema.BorrowdTo where the key is the same as for the booklet. --%>
                     <%-- For the moment no data is fetched from the tables, the fields contains static data. --%>
                     <div class="booklet-details-card-other small-12 columns">
-                        <div class="small-12 medium-9 large-10 columns">
+                        <div class="small-12 medium-9 large-9 columns">
                             <div class="booklet-details-card-other-note small-12 columns">
                                 <p>
                                     <span class="custom-label">Anteckningar: </span>
@@ -128,10 +128,13 @@
                         </div>
 
                         <%-- This section contains the command buttons for the form. --%>
-                        <div class="booklet-details-card-buttons small-12 medium-3 large-2 columns">
+                        <div class="booklet-details-card-buttons small-12 medium-3 large-3 columns">
                             <ul class="button-list">
                                 <li>
                                     <asp:HyperLink ID="BackHyperlink" CssClass="button" NavigateUrl='<%$ RouteUrl:routename=Booklets %>' ImageUrl="~/Content/Icons/Back-icon-smaller.png" ToolTip="Tillbaka till listan" runat="server" Text="Tillbaka till listan" />
+                                </li>
+                                <li>
+                                    <asp:ImageButton ID="PrintImageButton" ClientIDMode="Static" CssClass="button" ImageUrl="~/Content/Icons/Print-icon-smaller.png" runat="server" />
                                 </li>
                                 <li>
                                     <asp:HyperLink ID="EditHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletEdit", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Edit-icon-smaller.png" ToolTip="Redigera nothäftet" runat="server" Text="Redigera nothäftet" />
@@ -148,4 +151,8 @@
             </asp:FormView>
         </div>
     </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
+    <%: Scripts.Render("~/Scripts/BookletDetailsScript") %>
 </asp:Content>

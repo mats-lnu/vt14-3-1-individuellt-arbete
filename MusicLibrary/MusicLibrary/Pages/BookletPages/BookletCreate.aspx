@@ -6,7 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="row">
-        <div class="small-12 large-10 columns booklet-details-card">
+        <div class="small-12 large-10 columns booklet-create-card">
 
             <%-- Success message --%>
             <asp:PlaceHolder ID="SuccessMessagePlaceHolder" runat="server" Visible="false">
@@ -162,7 +162,7 @@
                     <%-- In this section user edit the data in tables appSchema.Note and appSchema.BorrowedBy --%>
                     <%-- For the moment no data is here is editable. for the moment update and insert methods ignore this section. --%>
                     <div class="booklet-details-card-other small-12 columns">
-                        <div class="small-12 medium-9 large-10 columns">
+                        <div class="small-12 medium-9 large-9 columns">
                             <div class="booklet-details-card-other-note small-12 columns">
                                 <div class="row">
                                     <label class="small-12 large-10 columns custom-label">
@@ -184,7 +184,7 @@
                         </div>
 
                         <%-- This section contains the command buttons for the form. --%>
-                        <div class="booklet-details-card-buttons small-12 medium-3 large-2 columns">
+                        <div class="booklet-details-card-buttons small-12 medium-3 large-3 columns">
                             <ul class="button-list">
                                 <li>
                                     <asp:LinkButton ID="CancelLinkButton" CssClass="button" ToolTip="Tillbaka" runat="server" OnClick="CancelLinkButton_Click">
@@ -203,4 +203,7 @@
             </asp:FormView>
         </div>
     </div>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolderScripts" runat="server">
 </asp:Content>

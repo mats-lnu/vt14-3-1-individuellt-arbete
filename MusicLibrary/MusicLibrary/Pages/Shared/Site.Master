@@ -4,10 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Svantes Musikbibliotek
-    </title>
-    <%: System.Web.Optimization.Styles.Render("~/Content/css") %>
-    <%: System.Web.Optimization.Scripts.Render("~/Scripts/modernizr") %>
+    <title>Svantes Musikbibliotek</title>
+    <%: Styles.Render("~/Content/css") %>
+    <%: Scripts.Render("~/Scripts/modernizr") %>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -17,17 +16,20 @@
                 <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server" />
             </header>
             <div id="Main">
+                <noscript>
+                    <p class="noJavascript alert-box error">Den här sidan kräver JavaScript för att fungera. Aktivera JavaScript i din webbläsare innan du fortsätter använda sidan.</p>
+                </noscript>
                 <div class="small-12 medium-3 large-2 columns">
                     <nav>
-                        <ul>
+                        <ul class="side-nav">
                             <li>
-                                <asp:LinkButton ID="StartpageLinkButton" runat="server" ToolTip="Gå till Startsidan" Text="Startsida" OnClick="StartpageLinkButton_Click" />
+                                <asp:LinkButton ID="StartpageLinkButton" CssClass="button tiny expand" runat="server" ToolTip="Gå till Startsidan" Text="Startsida" OnClick="StartpageLinkButton_Click" />
                             </li>
                             <li>
-                                <asp:LinkButton ID="BookletsLinkButton" runat="server" ToolTip="Gå till nothäftelistan" Text="Nothäften" OnClick="BookletsLinkButton_Click" />
+                                <asp:LinkButton ID="BookletsLinkButton" CssClass="button tiny expand" runat="server" ToolTip="Gå till nothäftelistan" Text="Nothäften" OnClick="BookletsLinkButton_Click" />
                             </li>
                             <li>
-                                <asp:LinkButton ID="CreateBookletLinkButton" runat="server" Text="Lägg till nothäfte" ToolTip="Skapa nytt nothäfte" OnClick="CreateBookletLinkButton_Click" />
+                                <asp:LinkButton ID="CreateBookletLinkButton" CssClass="button tiny expand" runat="server" Text="Lägg till nothäfte" ToolTip="Skapa nytt nothäfte" OnClick="CreateBookletLinkButton_Click" />
                             </li>
                         </ul>
                     </nav>
@@ -40,7 +42,10 @@
             </footer>
         </div>
     </form>
-    <%: System.Web.Optimization.Scripts.Render("~/Scripts/foundation") %>
+
+
+    <%: Scripts.Render("~/Scripts/foundation") %>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderScripts" runat="server" />
     <script>
         $(document).foundation();
     </script>

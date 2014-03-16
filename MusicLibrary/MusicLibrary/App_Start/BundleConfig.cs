@@ -22,6 +22,10 @@ namespace MusicLibrary
                 "~/Content/foundation.css",
                 "~/Content/SiteStyle.css"
             ));
+
+            bundles.Add(new ScriptBundle("~/Scripts/BookletDetailsScript").Include(
+                "~/Scripts/siteBookletDetailsScript.js"
+            ));
         }
     }
 }

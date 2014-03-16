@@ -7,11 +7,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderMain" runat="server">
     <div class="row">
         <div class="small-12 large-10 columns startpage-card">
-
             <h3>Svantes musikbibliotek</h3>
-
             <p>Välkommen till Svantes musikbibliotek.</p>
-
         </div>
     </div>
 </asp:Content>

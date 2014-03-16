@@ -84,6 +84,7 @@
     <Content Include="Content\Icons\Delete-icon-smaller.png" />
     <Content Include="Content\Icons\Details-icon-smaller.png" />
     <Content Include="Content\Icons\Edit-icon-smaller.png" />
+    <Content Include="Content\Icons\Print-icon-smaller.png" />
     <Content Include="Content\Icons\Save-icon-smaller.png" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\SiteStyle.css" />
@@ -119,6 +120,7 @@
     <Content Include="Scripts\foundation\foundation.topbar.js" />
     <Content Include="Scripts\jquery-2.1.0.js" />
     <Content Include="Scripts\jquery-2.1.0.min.js" />
+    <Content Include="Scripts\siteBookletDetailsScript.js" />
     <Content Include="Scripts\siteScript.js" />
     <Content Include="Scripts\vendor\fastclick.js" />
     <Content Include="Scripts\vendor\jquery.cookie.js" />

@@ -293,6 +293,7 @@ namespace MusicLibrary.Pages.BookletPages
                     }
 
                     CleanSession();
+                    Session["SuccessMessage"] = String.Format(Strings.UpdateBookletRecordSuccessSwedish);
                     Response.RedirectToRoute("BookletDetails", new { id = booklet.BookletID });
                     Context.ApplicationInstance.CompleteRequest();
                 }

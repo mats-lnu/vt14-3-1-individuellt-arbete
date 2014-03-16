@@ -59,6 +59,21 @@ span.error {
     font-size: 0.8rem;
 }
 
+.noJavascript {
+    font-size: large;
+    font-weight: bold;
+}
+
+/* Navigation */
+
+.side-nav {
+    padding: 5px 0 0;
+}
+
+    .side-nav li a {
+        margin: 0;
+    }
+
 /* Listing booklets */
 .booklet-card {
     padding: 10px !important;
@@ -169,6 +184,26 @@ a[title="Radera"] {
     margin-bottom: 2px;
 }
 
+/* Booklet edit */
+
+.booklet-edit-card {
+    padding: 10px 10px 20px !important;
+    margin: 5px !important;
+    border: 1px solid #8c8979;
+    background-color: #fff;
+    position: relative;
+}
+
+/* Booklet create */
+
+.booklet-create-card {
+    padding: 10px 10px 20px !important;
+    margin: 5px !important;
+    border: 1px solid #8c8979;
+    background-color: #fff;
+    position: relative;
+}
+
 /* Booklet delete */
 
 .booklet-delete-card {
@@ -229,3 +264,15 @@ span.title {
     .startpage-card p {
         font-size: 0.8rem;
     }
+
+/* When printing */
+@media print {
+
+    .side-nav, .alert-box, .button {
+        display: none;
+    }
+
+    .booklet-details-card, .booklet-create-card, .booklet-delete-card, .booklet-edit-card {
+        border: none;
+    }
+}
