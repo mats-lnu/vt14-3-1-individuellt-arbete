@@ -24,13 +24,13 @@
                     <nav>
                         <ul class="side-nav">
                             <li>
-                                <asp:LinkButton ID="StartpageLinkButton" CssClass="button tiny expand" runat="server" ToolTip="Gå till Startsidan" Text="Startsida" OnClick="StartpageLinkButton_Click" />
+                                <asp:LinkButton ID="StartpageLinkButton" CssClass="button tiny expand" runat="server" ToolTip="Gå till Startsidan" Text="Startsida" OnClick="StartpageLinkButton_Click" CausesValidation="false" />
                             </li>
                             <li>
-                                <asp:LinkButton ID="BookletsLinkButton" CssClass="button tiny expand" runat="server" ToolTip="Gå till nothäftelistan" Text="Nothäften" OnClick="BookletsLinkButton_Click" />
+                                <asp:LinkButton ID="BookletsLinkButton" CssClass="button tiny expand" runat="server" ToolTip="Gå till nothäftelistan" Text="Nothäften" OnClick="BookletsLinkButton_Click" CausesValidation="false" />
                             </li>
                             <li>
-                                <asp:LinkButton ID="CreateBookletLinkButton" CssClass="button tiny expand" runat="server" Text="Lägg till nothäfte" ToolTip="Skapa nytt nothäfte" OnClick="CreateBookletLinkButton_Click" />
+                                <asp:LinkButton ID="CreateBookletLinkButton" CssClass="button tiny expand" runat="server" Text="Lägg till nothäfte" ToolTip="Skapa nytt nothäfte" OnClick="CreateBookletLinkButton_Click" CausesValidation="false" />
                             </li>
                         </ul>
                     </nav>

@@ -14,7 +14,7 @@
                     <p>
                         <asp:Literal ID="SuccessMessageLiteral" runat="server" />
                     </p>
-                    <a href="#" class="close">&times;</a>
+                    <asp:HyperLink ID="CloseHyperLink" CssClass="close" NavigateUrl='<%# GetRouteUrl("BookletDetails", new { id = Page.RouteData.Values["id"].ToString() }) %>' runat="server" Text="&times;" />
                 </div>
             </asp:PlaceHolder>
 
@@ -102,6 +102,7 @@
                                     </td>
                                 </tr>
                             </ItemTemplate>
+
                             <%-- If no BookletContent existed from the Booklet. --%>
                             <EmptyDataTemplate>
                                 <p class="no-data-text">Nothäftet har inget innehåll.</p>
@@ -134,7 +135,7 @@
                                     <asp:HyperLink ID="BackHyperlink" CssClass="button" NavigateUrl='<%$ RouteUrl:routename=Booklets %>' ImageUrl="~/Content/Icons/Back-icon-smaller.png" ToolTip="Tillbaka till listan" runat="server" Text="Tillbaka till listan" />
                                 </li>
                                 <li>
-                                    <asp:ImageButton ID="PrintImageButton" ClientIDMode="Static" CssClass="button" ImageUrl="~/Content/Icons/Print-icon-smaller.png" runat="server" />
+                                    <asp:ImageButton ID="PrintImageButton" ClientIDMode="Static" CssClass="button" ImageUrl="~/Content/Icons/Print-icon-smaller.png" runat="server" CausesValidation="false" />
                                 </li>
                                 <li>
                                     <asp:HyperLink ID="EditHyperLink" CssClass="button" NavigateUrl='<%# GetRouteUrl("BookletEdit", new { id = Item.BookletID }) %>' ImageUrl="~/Content/Icons/Edit-icon-smaller.png" ToolTip="Redigera nothäftet" runat="server" Text="Redigera nothäftet" />

@@ -20,7 +20,7 @@
                     <p>
                         <asp:Literal ID="SuccessMessageLiteral" runat="server" />
                     </p>
-                    <a href="#" class="close">&times;</a>
+                    <asp:HyperLink ID="CloseHyperLink" CssClass="close" NavigateUrl='<%$ RouteUrl:routenate=Booklets %>' runat="server" Text="&times;" />
                 </div>
             </asp:PlaceHolder>
 

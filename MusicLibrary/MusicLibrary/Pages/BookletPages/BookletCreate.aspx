@@ -14,7 +14,7 @@
                     <p>
                         <asp:Literal ID="SuccessMessageLiteral" runat="server" />
                     </p>
-                    <a href="#" class="close">&times;</a>
+                    <asp:HyperLink ID="CloseHyperLink" CssClass="close" NavigateUrl='<%$ RouteUrl:routenate=BookletCreate %>' runat="server" Text="&times;" />
                 </div>
             </asp:PlaceHolder>
 
@@ -187,12 +187,12 @@
                         <div class="booklet-details-card-buttons small-12 medium-3 large-3 columns">
                             <ul class="button-list">
                                 <li>
-                                    <asp:LinkButton ID="CancelLinkButton" CssClass="button" ToolTip="Tillbaka" runat="server" OnClick="CancelLinkButton_Click">
+                                    <asp:LinkButton ID="CancelLinkButton" CssClass="button" ToolTip="Tillbaka" runat="server" OnClick="CancelLinkButton_Click" CausesValidation="false">
                                         <asp:Image ID="CancelImage" ImageUrl="~/Content/Icons/Back-icon-smaller.png" AlternateText="Tillbaka" runat="server" />
                                     </asp:LinkButton>
                                 </li>
                                 <li>
-                                    <asp:LinkButton ID="SaveLinkButton" CssClass="button" CommandName="Insert" ToolTip="Spara ändringar" runat="server">
+                                    <asp:LinkButton ID="SaveLinkButton" CssClass="button" CommandName="Insert" ToolTip="Spara ändringar" runat="server" CausesValidation="true">
                                         <asp:Image ID="SaveImage" ImageUrl="~/Content/Icons/Save-icon-smaller.png" AlternateText="Spara ändringar" runat="server" />
                                     </asp:LinkButton>
                                 </li>

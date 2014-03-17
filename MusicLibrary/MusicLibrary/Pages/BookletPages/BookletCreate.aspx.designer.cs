@@ -31,6 +31,15 @@ namespace MusicLibrary.Pages.BookletPages {
         protected global::System.Web.UI.WebControls.Literal SuccessMessageLiteral;
         
         /// <summary>
+        /// CloseHyperLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink CloseHyperLink;
+        
+        /// <summary>
         /// BookletEditValidationSummary control.
         /// </summary>
         /// <remarks>

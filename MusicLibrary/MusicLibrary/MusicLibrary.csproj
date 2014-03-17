@@ -98,6 +98,7 @@
     <Content Include="Pages\Shared\Error.aspx" />
     <Content Include="Pages\Shared\Error404.aspx" />
     <Content Include="Pages\Shared\Site.Master" />
+    <None Include="Properties\PublishProfiles\SvantesProfile.pubxml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Pages\Shared\Start.aspx" />
     <Content Include="Scripts\foundation.min.js" />
